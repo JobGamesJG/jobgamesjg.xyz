@@ -16,7 +16,7 @@ const NavLink = ({ router, href, children }: any) => {
 	const isCurrentPath = router.pathname === href || router.asPath == href;
 
 	return (
-		<div>
+		<div style={{ display: "grid", placeItems: "center" }}>
 			<a
 				className={`navlink ${isCurrentPath ? "active" : ""}`.trim()}
 				href={href}
