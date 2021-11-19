@@ -1,6 +1,9 @@
 import type { NextPage } from "next";
+import { calculateAge } from "../lib";
 
 const Home: NextPage = () => {
+	const age = calculateAge();
+
 	return (
 		<div className="about">
 			<div className="about-me">
@@ -11,13 +14,13 @@ const Home: NextPage = () => {
 					<div className="about-title">About Me</div>
 					<div className="about-text-items">
 						<div className="about-text">
-							Hi, I'm Job Klarenbeek, also known as JobGamesJG. I am a 13 year old java script
-							developer from the Netherlands.
+							Hi, I&apos;m Job Klarenbeek, also known as JobGamesJG. I am a {age} year old
+							programmer from the Netherlands.
 						</div>
 						<div className="about-text">
 							In my free time I watch anime, play games or do sports, but most important I program.
-							I program website like these and I'm trying to make minecraft mods. Besides mods I
-							also make texture packs If you wanna check out that out go visit my minecraft tab
+							I program website like these and I&apos;m trying to make minecraft mods. Besides mods
+							I also make texture packs If you wanna check out that out go visit my minecraft tab
 							above.
 						</div>
 						<div className="about-text">
