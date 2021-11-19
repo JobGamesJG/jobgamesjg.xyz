@@ -1,9 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
 @import "./components/navbar.scss";
+@import "./about.scss";
 
 body {
-	background-image: linear-gradient(315deg, #006b50, #001f42);
+	background-color: #191927;
 	color: #ffffff;
 	background-size: 100%;
 	min-height: 100vh;
@@ -21,4 +22,26 @@ body {
 	&::-webkit-scrollbar {
 		display: none;
 	}
+}
+
+.landing-wrapper {
+	min-height: 90vh;
+	min-width: 100vw;
+	display: grid;
+	place-items: center;
+}
+
+.landing-title {
+	font-weight: 600;
+	font-size: 50px;
+	text-align: center;
+}
+
+.landing-small {
+	font-weight: 300;
+	font-size: 30px;
+	-webkit-transform: translateY(-10px);
+	-moz-transform: translateY(-10px);
+	transform: translateY(-10px);
+	text-align: center;
 }
