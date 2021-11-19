@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import Link from "next/link";
-import React, { MouseEvent } from "react";
+import React from "react";
 
 interface Props {
 	href: string;
