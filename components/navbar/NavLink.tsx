@@ -1,31 +1,22 @@
-import { withRouter } from "next/router";
-import { MouseEvent } from "react";
+import { useRouter } from "next/router";
+import Link from "next/link";
+import React, { MouseEvent } from "react";
 
-const NavLink = ({ router, href, children }: any) => {
-	function prefetchPages() {
-		if (typeof window !== "undefined") {
-			router.prefetch(router.pathname);
-		}
-	}
+interface Props {
+	href: string;
+}
 
-	const handleClick = (event: MouseEvent<HTMLAnchorElement>) => {
-		event.preventDefault();
-		router.push(href);
-	};
-
+const NavLink: React.FC<Props> = ({ href, children }) => {
+	const router = useRouter();
 	const isCurrentPath = router.pathname === href || router.asPath == href;
 
 	return (
 		<div style={{ display: "grid", placeItems: "center" }}>
-			<a
-				className={`navlink ${isCurrentPath ? "active" : ""}`.trim()}
-				href={href}
-				onClick={handleClick}
-				style={{}}>
-				{children}
-			</a>
+			<Link href={href}>
+				<a className={`navlink ${isCurrentPath ? "active" : ""}`.trim()}>{children}</a>
+			</Link>
 		</div>
 	);
 };
 
-export default withRouter(NavLink);
+export default NavLink;
