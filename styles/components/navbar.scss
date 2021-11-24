@@ -22,11 +22,11 @@
 	max-width: 1200px;
 	width: 1200px;
 	padding: 5px 5px 5px 5px;
-	transition: all 0.5s ease;
+	transition: all 0.2s ease;
 
 	&.active {
-		border-bottom-left-radius: 15px;
-		border-bottom-right-radius: 15px;
+		border-bottom-left-radius: 10px;
+		border-bottom-right-radius: 10px;
 		background-color: rgba(#000000, 0.8);
 	}
 }
@@ -39,7 +39,7 @@
 
 .navlink {
 	color: rgba(#fff, 0.3);
-	transition: color 0.5s ease;
+	transition: color 0.1s ease;
 
 	font-weight: bold;
 	text-decoration: none;
