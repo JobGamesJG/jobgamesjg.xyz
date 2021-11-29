@@ -11,12 +11,7 @@ const ProjectList: React.FC = () => {
 		<AnimatePresence exitBeforeEnter>
 			<motion.div
 				key="1"
-				style={{
-					width: "100%",
-					height: "100%",
-					display: "grid",
-					placeItems: "center",
-				}}
+				className="project-list"
 				initial={{ opacity: 0 }}
 				animate={{
 					opacity: 1,
