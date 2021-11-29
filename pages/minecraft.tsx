@@ -1,9 +1,21 @@
-import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
+import React from "react";
+import ProjectList from "../components/projectList";
+import { calculateAge } from "../lib";
 
-const Home: NextPage = () => {
-	return <div></div>;
+const minecraft: React.FC = () => {
+	const age = calculateAge();
+
+	return (
+		<>
+			<Head>
+				<title>JobGamesJG - Projects</title>
+			</Head>
+			<div className="projects">
+				<ProjectList />
+			</div>
+		</>
+	);
 };
 
-export default Home;
+export default minecraft;

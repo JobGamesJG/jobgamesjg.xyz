@@ -1,0 +1,18 @@
+[
+	{
+		"image": "https://cdn.jobgamesjg.tk/S4M2_7wt/placeholder.png",
+		"title": "JobGamesJG[1.17]",
+		"description": "1.17 optifine",
+		"buttons": [
+			{ "class": "fas fa-download", "url": "https://stereo-bot.tk/", "tooltip": "Download" }
+		]
+	},
+	{
+		"image": "https://cdn.jobgamesjg.tk/S4M2_7wt/placeholder.png",
+		"title": "JobGamesJG[1.17]",
+		"description": "1.17 optifine",
+		"buttons": [
+			{ "class": "fas fa-download", "url": "https://stereo-bot.tk/", "tooltip": "Download" }
+		]
+	}
+]
