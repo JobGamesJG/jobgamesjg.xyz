@@ -1,7 +1,7 @@
 import { Project } from "../../lib/types";
 import { motion } from "framer-motion";
 import React from "react";
-import Tippy from "@tippyjs/react";
+import Tooltip from "../Tooltip";
 
 const ProjectCard: React.FC<Project> = (project) => {
 	return (
@@ -21,11 +21,11 @@ const ProjectCard: React.FC<Project> = (project) => {
 				<img src={project.image} alt="" />
 				<div>
 					{project.buttons.map((button, key) => (
-						<Tippy key={key} content={<p>{button.tooltip}</p>}>
+						<Tooltip key={key} content={button.tooltip}>
 							<button onClick={() => window.open(button.url)}>
 								<i className={button.class} />
 							</button>
-						</Tippy>
+						</Tooltip>
 					))}
 				</div>
 			</div>
