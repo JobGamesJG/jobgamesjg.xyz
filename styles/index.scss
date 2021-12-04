@@ -5,16 +5,17 @@
 @import "./minecraft.scss";
 @import "./about.scss";
 
-body {
-	background-color: #191927;
-	color: #ffffff;
-	background-size: 100%;
-	min-height: 100vh;
-
+* {
+	font-family: "Poppins", sans-serif;
 	padding: 0;
 	margin: 0;
+	color: #fff;
+	box-sizing: border-box;
+}
 
-	font-family: "Poppins", sans-serif;
+body {
+	background-color: #131320;
+	min-height: 100vh;
 
 	/* hide scroll bar */
 	-ms-overflow-style: none; /* IE and Edge */
@@ -24,6 +25,16 @@ body {
 	&::-webkit-scrollbar {
 		display: none;
 	}
+}
+
+a {
+	text-decoration: none;
+
+	user-select: none; /* standard syntax */
+	-webkit-user-select: none; /* webkit (safari, chrome) browsers */
+	-moz-user-select: none; /* mozilla browsers */
+	-khtml-user-select: none; /* webkit (konqueror) browsers */
+	-ms-user-select: none; /* IE10+ */
 }
 
 .landing-wrapper {
@@ -42,10 +53,31 @@ body {
 .landing-small {
 	font-weight: 300;
 	font-size: 30px;
-	-webkit-transform: translateY(-10px);
-	-moz-transform: translateY(-10px);
 	transform: translateY(-10px);
 	text-align: center;
+}
+
+.landing-buttons {
+	display: flex;
+	justify-content: center;
+	font-size: 40px;
+
+	a {
+		margin-right: 10px;
+
+		&:last-child {
+			margin-right: 0px;
+		}
+	}
+
+	i {
+		color: rgba(#fff, 0.6);
+		transition: all 0.5s ease;
+
+		&:hover {
+			color: rgba(#fff, 0.9);
+		}
+	}
 }
 
 /* == Tippy Theme */
