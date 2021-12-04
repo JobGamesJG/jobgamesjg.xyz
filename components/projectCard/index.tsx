@@ -15,19 +15,17 @@ const ProjectCard: React.FC<Project> = (project) => {
 				},
 			}}
 			className="projects-item">
+			<h2>{project.title}</h2>
+			<p>{project.description}</p>
+			<img src={project.image} alt="" />
 			<div>
-				<h2>{project.title}</h2>
-				<p>{project.description}</p>
-				<img src={project.image} alt="" />
-				<div>
-					{project.buttons.map((button, key) => (
-						<Tooltip key={key} content={button.tooltip}>
-							<button onClick={() => window.open(button.url)}>
-								<i className={button.class} />
-							</button>
-						</Tooltip>
-					))}
-				</div>
+				{project.buttons.map((button, key) => (
+					<Tooltip key={key} content={button.tooltip}>
+						<button onClick={() => window.open(button.url)}>
+							<i className={button.class} />
+						</button>
+					</Tooltip>
+				))}
 			</div>
 		</motion.div>
 	);
