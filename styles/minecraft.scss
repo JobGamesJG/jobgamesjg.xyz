@@ -48,6 +48,7 @@
 		border: none;
 		background: none;
 		cursor: pointer;
+		align-items: flex-start;
 
 		font-size: 1.5rem;
 		margin-left: 10px;
@@ -78,7 +79,7 @@
 	flex-wrap: wrap;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 100px) {
 	.projects-item {
 		flex-direction: column-reverse;
 		width: 95vw;

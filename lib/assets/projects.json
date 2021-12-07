@@ -4,7 +4,11 @@
 		"title": "Kitit[1.17]",
 		"description": "1.17 optifine",
 		"buttons": [
-			{ "class": "fas fa-download", "url": "https://stereo-bot.tk/", "tooltip": "Download" }
+			{
+				"class": "fas fa-download",
+				"url": "https://cdn.jobgamesjg.tk/S4M2_7wt/§9JobGamesJG§1[§91.17§1].zip",
+				"tooltip": "Download"
+			}
 		]
 	},
 	{
