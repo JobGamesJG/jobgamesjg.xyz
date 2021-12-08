@@ -28,9 +28,13 @@ const Home: NextPage = () => {
 				<div className="about-me">
 					<div className="about-items">
 						<img className="about-img" src="https://cdn.jobgamesjg.tk/S4M2_7wt/pfp.gif" alt="" />
+						<AboutText />
 					</div>
-					<AboutText />
-					<AnimeListComp animes={animes} />
+					<div className="about-breakline" />
+					<div className="anime">
+						<h1 className="anime-main-title">Animes</h1>
+						<AnimeListComp animes={animes} />
+					</div>
 				</div>
 			</div>
 		</>

@@ -21,8 +21,9 @@ export const AnimeCard: React.FC<Props> = (props) => {
 
 	const variants2: Variants = {
 		disabled: {
-			height: 0,
-			padding: 0,
+			height: 300,
+			padding: 10,
+			opacity: 0,
 			transition: {
 				duration: 0.5 + 0.2,
 				ease: [0.6, -0.05, 0.01, 0.99],
@@ -31,6 +32,7 @@ export const AnimeCard: React.FC<Props> = (props) => {
 		enabled: {
 			height: 300,
 			padding: 10,
+			opacity: 1,
 			transition: {
 				duration: 0.7,
 				ease: [0.6, -0.05, 0.01, 0.99],
