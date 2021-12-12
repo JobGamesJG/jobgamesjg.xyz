@@ -20,9 +20,7 @@ const Home: NextPage = () => {
 							transition: { duration: 1, delay: 0.5, ease: [0.6, -0.05, 0.01, 0.99] },
 						}}
 						className="landing-text">
-						<h1 className="landing-title">
-							Hello, my name is Job <span className="landing-wave-emoji">👋</span>
-						</h1>
+						<h1 className="landing-title">Hello, my name is Job👋</h1>
 						<p className="landing-small">{age} year-old programmer from the Netherlands</p>
 					</motion.div>
 					<motion.div

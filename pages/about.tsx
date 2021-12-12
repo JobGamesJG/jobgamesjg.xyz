@@ -1,4 +1,5 @@
 import { AboutText, AnimeListComp } from "../components/about";
+import { motion } from "framer-motion";
 import Head from "next/head";
 import type { NextPage } from "next";
 import { AnimeList, calculateAge } from "../lib";
@@ -24,7 +25,13 @@ const Home: NextPage = () => {
 			<Head>
 				<title>JobGamesJG - About</title>
 			</Head>
-			<div className="about">
+			<motion.div
+				initial={{ opacity: 0 }}
+				animate={{
+					opacity: 1,
+					transition: { duration: 1, delay: 0.5, ease: [0.6, -0.05, 0.01, 0.99] },
+				}}
+				className="about">
 				<div className="about-me">
 					<div className="about-items">
 						<img className="about-img" src="https://cdn.jobgamesjg.tk/S4M2_7wt/pfp.gif" alt="" />
@@ -36,7 +43,7 @@ const Home: NextPage = () => {
 						<AnimeListComp animes={animes} />
 					</div>
 				</div>
-			</div>
+			</motion.div>
 		</>
 	);
 };

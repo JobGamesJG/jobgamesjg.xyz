@@ -25,7 +25,7 @@ export const AnimeCard: React.FC<Props> = (props) => {
 			padding: 10,
 			opacity: 0,
 			transition: {
-				duration: 0.5 + 0.2,
+				duration: 0.5,
 				ease: [0.6, -0.05, 0.01, 0.99],
 			},
 		},
@@ -34,7 +34,7 @@ export const AnimeCard: React.FC<Props> = (props) => {
 			padding: 10,
 			opacity: 1,
 			transition: {
-				duration: 0.7,
+				duration: 0.5,
 				ease: [0.6, -0.05, 0.01, 0.99],
 			},
 		},
@@ -70,8 +70,11 @@ export const AnimeCard: React.FC<Props> = (props) => {
 							<p className="anime-watching">
 								<i className={props.icon} style={{ color: props.colour }} /> {props.status}
 							</p>
+							<p className="anime-type">
+								<i className={props.animeTypeIcon}></i> {props.animeType}
+							</p>
 							<p className="anime-rating">
-								<i className="fas fa-star" /> {props.rating}
+								<i className="fas fa-star"></i> {props.rating}
 							</p>
 						</div>
 					</div>

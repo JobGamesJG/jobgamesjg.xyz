@@ -25,6 +25,13 @@ const Anime = async (_: NextApiRequest, res: NextApiResponse) => {
 		return choice;
 	};
 
+	const getTypeIcon = (status: string): string => {
+		let choice; // = ["fas fa-tv", "fas fa-film"];
+		status == "Movie" ? (choice = "fas fa-film") : (choice = "fas fa-tv");
+
+		return choice;
+	};
+
 	const response = await axios
 		.get<AnimeListRaw[]>("https://myanimelist.net/animelist/JobGamesJG/load.json?status=7&offset=0")
 		.catch(() => null);
@@ -37,6 +44,8 @@ const Anime = async (_: NextApiRequest, res: NextApiResponse) => {
 		img: anime.anime_image_path.replace("r/96x136/", ""),
 		rating: anime.score,
 		title: anime.anime_title,
+		animeTypeIcon: getTypeIcon(anime.anime_media_type_string),
+		animeType: anime.anime_media_type_string,
 		status: getStatus(anime.status),
 		colour: getColour(anime.status),
 		icon: getIcon(anime.status),
