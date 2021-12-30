@@ -34,7 +34,11 @@ const Home: NextPage = () => {
 				className="about">
 				<div className="about-me">
 					<div className="about-items">
-						<img className="about-img" src="https://cdn.jobgamesjg.tk/S4M2_7wt/pfp.gif" alt="" />
+						<img
+							className="about-img"
+							src="https://cdn.jobgamesjg.tk/files/pfp.gif?raw=true"
+							alt=""
+						/>
 						<AboutText />
 					</div>
 					<div className="about-breakline" />

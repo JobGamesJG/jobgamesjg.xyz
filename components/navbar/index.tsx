@@ -10,13 +10,17 @@ const Navbar: React.FC = () => {
 			<div className={active ? "navbar active" : "navbar"}>
 				<div className="navbar-content">
 					<div className="navbar-logo">
-						<img className="navbar-img" src="https://cdn.jobgamesjg.tk/S4M2_7wt/pfp.gif" alt="" />
+						<img
+							className="navbar-img"
+							src="https://cdn.jobgamesjg.tk/files/pfp.gif?raw=true"
+							alt=""
+						/>
 						<p className="navbar-logo-text">JobGamesJG</p>
 					</div>
 					<div className="navbar-routes">
 						<NavLink href="/">Home</NavLink>
 						<NavLink href="/about">About</NavLink>
-						<NavLink href="/status">status</NavLink>
+						<NavLink href="/minecraft">Minecraft</NavLink>
 					</div>
 				</div>
 			</div>
