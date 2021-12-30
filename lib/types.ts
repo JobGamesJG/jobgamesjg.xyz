@@ -41,6 +41,7 @@ export interface AnimeList {
 	colour: string;
 	url: string;
 }
+
 export interface Project {
 	title: string;
 	image: string;
