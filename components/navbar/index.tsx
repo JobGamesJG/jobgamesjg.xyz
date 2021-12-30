@@ -16,7 +16,7 @@ const Navbar: React.FC = () => {
 					<div className="navbar-routes">
 						<NavLink href="/">Home</NavLink>
 						<NavLink href="/about">About</NavLink>
-						<NavLink href="/minecraft">Minecraft</NavLink>
+						<NavLink href="/status">status</NavLink>
 					</div>
 				</div>
 			</div>
