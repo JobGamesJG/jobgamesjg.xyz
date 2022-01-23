@@ -671,12 +671,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:^0.24.0":
-  version: 0.24.0
-  resolution: "axios@npm:0.24.0"
+"axios@npm:^0.25.0":
+  version: 0.25.0
+  resolution: "axios@npm:0.25.0"
   dependencies:
-    follow-redirects: ^1.14.4
-  checksum: 468cf496c08a6aadfb7e699bebdac02851e3043d4e7d282350804ea8900e30d368daa6e3cd4ab83b8ddb5a3b1e17a5a21ada13fc9cebd27b74828f47a4236316
+    follow-redirects: ^1.14.7
+  checksum: 2a8a3787c05f2a0c9c3878f49782357e2a9f38945b93018fb0c4fd788171c43dceefbb577988628e09fea53952744d1ecebde234b561f1e703aa43e0a598a3ad
   languageName: node
   linkType: hard
 
@@ -1433,13 +1433,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"follow-redirects@npm:^1.14.4":
-  version: 1.14.6
-  resolution: "follow-redirects@npm:1.14.6"
+"follow-redirects@npm:^1.14.7":
+  version: 1.14.7
+  resolution: "follow-redirects@npm:1.14.7"
   peerDependenciesMeta:
     debug:
       optional: true
-  checksum: 7fcdb089a733d2aa39041880790e9f772df009fcd0b243fee7e10acf0e14a8dab5208cf79eb1de35b9cc6033d4dde7f95becadfaa360c50d460b4c730b375e80
+  checksum: f6d03e5e30877431065bca0d1b2e3db93949eb799d368a5c07ea8a4b71205f0349a3f8f0191bf13a07c93885522834dca1dc8e527dc99a772c6911fba24edc5f
   languageName: node
   linkType: hard
 
@@ -2011,7 +2011,7 @@ __metadata:
   dependencies:
     "@tippyjs/react": ^4.2.6
     "@types/react": 17.0.38
-    axios: ^0.24.0
+    axios: ^0.25.0
     eslint: 8.7.0
     eslint-config-next: 12.0.8
     framer-motion: ^6.2.1
@@ -2020,8 +2020,8 @@ __metadata:
     react: 17.0.2
     react-dom: 17.0.2
     react-spinners: ^0.11.0
-    sass: ^1.48.0
-    typescript: 4.5.4
+    sass: ^1.49.0
+    typescript: 4.5.5
   languageName: unknown
   linkType: soft
 
@@ -2333,9 +2333,9 @@ __metadata:
   linkType: hard
 
 "negotiator@npm:^0.6.2":
-  version: 0.6.2
-  resolution: "negotiator@npm:0.6.2"
-  checksum: dfddaff6c06792f1c4c3809e29a427b8daef8cd437c83b08dd51d7ee11bbd1c29d9512d66b801144d6c98e910ffd8723f2432e0cbf8b18d41d2a09599c975ab3
+  version: 0.6.3
+  resolution: "negotiator@npm:0.6.3"
+  checksum: b8ffeb1e262eff7968fc90a2b6767b04cfd9842582a9d0ece0af7049537266e7b2506dfb1d107a32f06dd849ab2aea834d5830f7f4d0e5cb7d36e1ae55d021d9
   languageName: node
   linkType: hard
 
@@ -2931,16 +2931,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sass@npm:^1.48.0":
-  version: 1.48.0
-  resolution: "sass@npm:1.48.0"
+"sass@npm:^1.49.0":
+  version: 1.49.0
+  resolution: "sass@npm:1.49.0"
   dependencies:
     chokidar: ">=3.0.0 <4.0.0"
     immutable: ^4.0.0
     source-map-js: ">=0.6.2 <2.0.0"
   bin:
     sass: sass.js
-  checksum: 0fa57d17a9ac9eff914719a3c9cf986cb81c6714cc09214ace65e9f1af0bd47f750793dfc39bbd1b199c9b8c12b1e4aba669ba08dfbd649cfb581c55d20a839f
+  checksum: 7cd60868594fb0b6fed87bf4870ad5a7da7e3746cb5127f3ede2565380f3e30ba2de72d64e9083f2d55d0de81f756894fe6d9314c97acb704cf9fc97fbbafd0c
   languageName: node
   linkType: hard
 
@@ -3347,23 +3347,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:4.5.4":
-  version: 4.5.4
-  resolution: "typescript@npm:4.5.4"
+"typescript@npm:4.5.5":
+  version: 4.5.5
+  resolution: "typescript@npm:4.5.5"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 59f3243f9cd6fe3161e6150ff6bf795fc843b4234a655dbd938a310515e0d61afd1ac942799e7415e4334255e41c2c49b7dd5d9fd38a17acd25a6779ca7e0961
+  checksum: 506f4c919dc8aeaafa92068c997f1d213b9df4d9756d0fae1a1e7ab66b585ab3498050e236113a1c9e57ee08c21ec6814ca7a7f61378c058d79af50a4b1f5a5e
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@4.5.4#~builtin<compat/typescript>":
-  version: 4.5.4
-  resolution: "typescript@patch:typescript@npm%3A4.5.4#~builtin<compat/typescript>::version=4.5.4&hash=493e53"
+"typescript@patch:typescript@4.5.5#~builtin<compat/typescript>":
+  version: 4.5.5
+  resolution: "typescript@patch:typescript@npm%3A4.5.5#~builtin<compat/typescript>::version=4.5.5&hash=493e53"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 2e488dde7d2c4a2fa2e79cf2470600f8ce81bc0563c276b72df8ff412d74456ae532ba824650ae936ce207440c79720ddcfaa25e3cb4477572b8534fa4e34d49
+  checksum: c05c318d79c690f101d7ffb34cd6c7d6bbd884d3af9cefe7749ad0cd6be43c7082f098280982ca945dcba23fde34a08fed9602bb26540936baf8c0520727d3ba
   languageName: node
   linkType: hard
 
