@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { useEffect, useState } from "react";
 import NavLink from "./NavLink";
 
@@ -12,7 +13,7 @@ const Navbar: React.FC = () => {
 					<div className="navbar-logo">
 						<img
 							className="navbar-img"
-							src="https://cdn.jobgamesjg.tk/files/pfp.gif?raw=true"
+							src="https://lh3.googleusercontent.com/ogw/ADea4I56cV0MI-3fEb1-xju9CNHA1Dmjnli66rEgwU-hsQ=s256-c-mo"
 							alt=""
 						/>
 						<p className="navbar-logo-text">JobGamesJG</p>

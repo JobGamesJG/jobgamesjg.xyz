@@ -1,4 +1,3 @@
-import React from "react";
 import { calculateAge } from "../../../lib";
 
 export const AboutText: React.FC = () => {
@@ -13,12 +12,12 @@ export const AboutText: React.FC = () => {
 					year-old programmer from the Netherlands and the creator of some awsome texture packs.
 				</p>
 				<p className="about-text">
-					In my free time <del>I sleep a lot</del> watch anime or play games. I also do sports,
-					Hockey. and I&apos;m pretty good at it.
+					In my free time <del>I sleep a lot</del>, watch anime or play games. I also do sports,
+					Hockey and I&apos;m pretty good at it.
 				</p>
 				<p className="about-text">
-					That’s all I wanna say about my live. There are no special things i do besides programing
-					and making texture packs, after all I am just a normal person.
+					That&apos;s all I wanna say about my live. There aren&apos;t any other special things I do
+					besides programing and making texture packs, after all I am just a normal person.
 				</p>
 			</div>
 		</div>

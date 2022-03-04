@@ -2,11 +2,10 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
 
 @import "./components/navbar.scss";
-@import "./components/animeCard.scss";
-@import "./components/projectCard.scss";
-@import "./pages/minecraft.scss";
-@import "./pages/landing.scss";
+@import "./components/aboutText.scss";
+@import "./pages/home.scss";
 @import "./pages/about.scss";
+@import "./pages/404.scss";
 
 * {
 	font-family: "Poppins", sans-serif;
@@ -14,10 +13,14 @@
 	margin: 0;
 	color: #fff;
 	box-sizing: border-box;
+
+	> img {
+		filter: drop-shadow(0px 3px 0px rgba(0, 0, 0, 1));
+	}
 }
 
 body {
-	background-image: url(https://cdn.jobgamesjg.tk/files/background.png?raw=true);
+	background-color: #0e0e10;
 	background-attachment: fixed;
 	min-height: 100vh;
 
@@ -39,62 +42,4 @@ a {
 	-moz-user-select: none; /* mozilla browsers */
 	-khtml-user-select: none; /* webkit (konqueror) browsers */
 	-ms-user-select: none; /* IE10+ */
-}
-
-/* == Tippy Theme */
-@font-face {
-	font-family: "Discord Font";
-	font-weight: 900;
-	src: url("/assets/fonts/discord.woff2") format("woff2");
-	font-style: normal;
-}
-
-.tippy-box.discord-theme {
-	background-color: black;
-	box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.5);
-}
-
-.tippy-box[data-inertia][data-state="visible"] {
-	transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.tippy-box[data-placement^="top"][data-animation="discord-anim"] {
-	transform-origin: center !important;
-	&[data-state="hidden"] {
-		opacity: 0;
-		transform: scale(0.9) translateY(-11px);
-	}
-	&[data-state="visible"] {
-		transform: scale(1);
-	}
-}
-
-.tippy-box[data-placement^="bottom"][data-animation="discord-anim"] {
-	&[data-state="hidden"] {
-		opacity: 0;
-		transform: scale(0.9) translateY(11px);
-	}
-	&[data-state="visible"] {
-		transform: scale(1);
-	}
-}
-
-.tippy-box.discord-theme .tippy-arrow {
-	color: black;
-	filter: drop-shadow(0 2px 16px 0 rgba(0, 0, 0, 0.5));
-}
-
-.tippy-box.discord-theme .tippy-content {
-	font-family: "Discord Font", sans-serif;
-	text-align: center;
-	padding: 10px 15px;
-	color: rgba(255, 255, 255, 0.95);
-	font-weight: 500;
-	letter-spacing: 0.4px;
-	font-size: 1.1em;
-
-	h2 {
-		margin: 0;
-		margin-bottom: 8px;
-	}
 }

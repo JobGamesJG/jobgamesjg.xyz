@@ -1,3 +1,12 @@
+export interface MojangRaw {
+	name: string;
+	id: string;
+	properties: {
+		type: string;
+		value: string;
+	}[];
+}
+
 export interface AnimeListRaw {
 	status: number;
 	score: number;
@@ -40,15 +49,4 @@ export interface AnimeList {
 	animeType: string;
 	colour: string;
 	url: string;
-}
-
-export interface Project {
-	title: string;
-	image: string;
-	description: string;
-	buttons: {
-		class: string;
-		url: string;
-		tooltip: string;
-	}[];
 }

@@ -1,11 +1,9 @@
 import "../styles/index.scss";
-import "tippy.js/dist/tippy.css";
-
-import { AnimatePresence, motion } from "framer-motion";
-import Navbar from "../components/navbar";
 import type { AppProps } from "next/app";
+import Navbar from "../components/navbar";
+import { AnimatePresence, motion } from "framer-motion";
 
-const App = ({ Component, pageProps, router }: AppProps) => {
+function MyApp({ Component, pageProps, router }: AppProps) {
 	return (
 		<>
 			<Navbar />
@@ -26,5 +24,6 @@ const App = ({ Component, pageProps, router }: AppProps) => {
 			</AnimatePresence>
 		</>
 	);
-};
-export default App;
+}
+
+export default MyApp;
