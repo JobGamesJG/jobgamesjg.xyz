@@ -1,7 +1,7 @@
 import { motion, Variants } from "framer-motion";
 import type { NextPage } from "next";
-import Head from "next/head";
 import { calculateAge } from "../lib";
+import Head from "next/head";
 
 const Home: NextPage = () => {
 	const age = calculateAge();
@@ -60,18 +60,16 @@ const Home: NextPage = () => {
 						initial="initial"
 						animate="animate"
 						variants={variants3}
-						className="landing-buttons">
-						<div className="landing-buttons">
-							<a href="https://discord.com/users/679240313952403457">
-								<i className="fab fa-discord"></i>
-							</a>
-							<a href="https://github.com/JobGamesJG">
-								<i className="fab fa-github"></i>
-							</a>
-							<a href="https://twitter.com/JobGamesJG">
-								<i className="fab fa-twitter"></i>
-							</a>
-						</div>
+						className="landing-socials">
+						<a href="https://discord.com/users/679240313952403457">
+							<i className="fab fa-discord"></i>
+						</a>
+						<a href="https://github.com/JobGamesJG">
+							<i className="fab fa-github"></i>
+						</a>
+						<a href="https://twitter.com/JobGamesJG">
+							<i className="fab fa-twitter"></i>
+						</a>
 					</motion.div>
 				</div>
 			</div>

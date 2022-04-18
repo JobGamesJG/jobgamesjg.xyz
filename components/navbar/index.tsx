@@ -21,7 +21,6 @@ const Navbar: React.FC = () => {
 					<div className="navbar-routes">
 						<NavLink href="/">Home</NavLink>
 						<NavLink href="/about">About</NavLink>
-						<NavLink href="/minecraft">Minecraft</NavLink>
 					</div>
 				</div>
 			</div>

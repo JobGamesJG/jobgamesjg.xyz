@@ -1,24 +1,10 @@
 import { AboutText } from "../components/about/index";
-import { MojangRaw, calculateAge } from "../lib";
-import { useEffect, useState } from "react";
-import axios, { AxiosError } from "axios";
+import { calculateAge } from "../lib";
 import type { NextPage } from "next";
 import Head from "next/head";
 
 const About: NextPage = () => {
 	const age = calculateAge();
-
-	const [minecrafts, setMinecraft] = useState<MojangRaw[] | null>(null);
-
-	useEffect(() => {
-		const { cancel, token } = axios.CancelToken.source();
-		axios
-			.get<{ minecraft: MojangRaw[] }>("/api/mojang", { cancelToken: token })
-			.then((res) => setMinecraft(res.data.minecraft))
-			.catch((err: AxiosError) => console.error(`[minecraft]: ${err.message}`));
-
-		return () => cancel("Request cancelled");
-	}, []);
 
 	return (
 		<>

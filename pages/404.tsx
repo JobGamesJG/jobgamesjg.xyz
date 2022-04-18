@@ -26,7 +26,7 @@ const Home: NextPage = () => {
 						src="https://cdn.jobgamesjg.tk/files/pfp.gif?raw=true"
 						alt=""
 					/>
-					<p className="error404-text">Don&apos;t cry</p>
+					<p className="error404-text">Don&apos;t be sad</p>
 					<p className="error404-text">Its just a 404 error, try again</p>
 				</motion.div>
 				<motion.div
