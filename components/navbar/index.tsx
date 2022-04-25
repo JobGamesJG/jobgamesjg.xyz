@@ -22,7 +22,6 @@ const Navbar: React.FC = () => {
 					<div className={navOpen ? "navbar-routes active" : "navbar-routes"}>
 						<NavLink href="/" name="Home" onClick={() => setNavOpen(false)} />
 						<NavLink href="/about" name="About" onClick={() => setNavOpen(false)} />
-						<NavLink href="/projects" name="Projects" onClick={() => setNavOpen(false)} />
 					</div>
 					<i
 						className={navOpen ? "nav-button fas fa-times" : "nav-button fas fa-bars"}
