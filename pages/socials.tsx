@@ -5,7 +5,9 @@ import { calculateAge, InstagramList } from "../lib";
 import React, { useEffect, useState } from "react";
 import Head from "next/head";
 
-const Socials: NextPage = () => {
+type Props = InstagramList & { number: number };
+
+const Socials: React.FC<Props> = (props) => {
 	const age = calculateAge();
 	const [Instagrams, setInstagrams] = useState<InstagramList[] | null>(null);
 

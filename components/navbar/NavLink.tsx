@@ -4,18 +4,20 @@ import React from "react";
 
 interface Props {
 	href: string;
+	name: string;
+	onClick(): void;
 }
 
-const NavLink: React.FC<Props> = ({ href, children }) => {
-	const router = useRouter();
-	const isCurrentPath = router.pathname === href || router.asPath == href;
+const NavLink: React.FC<Props> = ({ href, name, onClick }) => {
+	const { asPath } = useRouter();
+	const className = asPath === href ? "navbar-link active".trim() : "navbar-link";
 
 	return (
-		<div style={{ display: "grid", placeItems: "center" }}>
-			<Link href={href}>
-				<a className={`navlink ${isCurrentPath ? "active" : ""}`.trim()}>{children}</a>
-			</Link>
-		</div>
+		<Link href={href}>
+			<a onClick={onClick} className={className}>
+				{name}
+			</a>
+		</Link>
 	);
 };
 

@@ -1,9 +1,10 @@
-/* eslint-disable @next/next/no-img-element */
 import React, { useEffect, useState } from "react";
 import NavLink from "./NavLink";
 
 const Navbar: React.FC = () => {
+	const [navOpen, setNavOpen] = useState(false);
 	const [active, setActive] = useState(false);
+
 	useEffect(() => window.addEventListener("scroll", () => setActive(window.scrollY > 20)), []);
 
 	return (
@@ -18,10 +19,15 @@ const Navbar: React.FC = () => {
 						/>
 						<p className="navbar-logo-text">JobGamesJG</p>
 					</div>
-					<div className="navbar-routes">
-						<NavLink href="/">Home</NavLink>
-						<NavLink href="/about">About</NavLink>
+					<div className={navOpen ? "navbar-routes active" : "navbar-routes"}>
+						<NavLink href="/" name="Home" onClick={() => setNavOpen(false)} />
+						<NavLink href="/about" name="About" onClick={() => setNavOpen(false)} />
+						<NavLink href="/projects" name="Projects" onClick={() => setNavOpen(false)} />
 					</div>
+					<i
+						className={navOpen ? "nav-button fas fa-times" : "nav-button fas fa-bars"}
+						onClick={() => setNavOpen(!navOpen)}
+					/>
 				</div>
 			</div>
 		</div>

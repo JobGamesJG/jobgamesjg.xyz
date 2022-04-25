@@ -1,9 +1,9 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
-/* eslint-disable @next/next/no-img-element */
 import { motion } from "framer-motion";
 import type { NextPage } from "next";
 import Head from "next/head";
 import { calculateAge } from "../lib";
+import s from "../public/Error404.png";
 
 const Home: NextPage = () => {
 	const age = calculateAge();
@@ -21,13 +21,10 @@ const Home: NextPage = () => {
 						transition: { duration: 1, delay: 0.5, ease: [0.6, -0.05, 0.01, 0.99] },
 					}}
 					className="error404">
-					<img
-						className="error404-img"
-						src="https://cdn.jobgamesjg.tk/files/pfp.gif?raw=true"
-						alt=""
-					/>
-					<p className="error404-text">Don&apos;t be sad</p>
-					<p className="error404-text">Its just a 404 error, try again</p>
+					<div>
+						<p className="error404-text">[404]</p>
+						<p className="error404-text">Page Not Found</p>
+					</div>
 				</motion.div>
 				<motion.div
 					initial={{ opacity: 0, y: 25 }}

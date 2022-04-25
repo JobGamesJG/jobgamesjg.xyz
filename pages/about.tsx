@@ -11,18 +11,20 @@ const About: NextPage = () => {
 			<Head>
 				<title>JobGamesJG - about</title>
 			</Head>
-			<div className="about-wrapper">
-				<div className="about">
+			<div className="about">
+				<div className="about-me">
 					<div className="about-items">
 						<img
+							alt=""
 							className="about-img"
 							src="https://lh3.googleusercontent.com/ogw/ADea4I56cV0MI-3fEb1-xju9CNHA1Dmjnli66rEgwU-hsQ=s256-c-mo"
-							alt=""
 						/>
+					</div>
+					<div>
 						<AboutText />
 					</div>
-					<div className="about-breakline" />
 				</div>
+				<div className="about-breakline" />
 			</div>
 		</>
 	);
