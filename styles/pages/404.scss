@@ -1,13 +1,12 @@
 .error404-wrapper {
 	height: 100vh;
 	width: 100vw;
-	display: grid;
-	place-items: center;
+	display: flex;
+	justify-content: center;
 }
 
 .error404 {
-	margin-top: auto;
-	width: 15rem;
+	margin: auto;
 }
 
 .error404-text {
@@ -21,20 +20,18 @@
 }
 
 .error404-button {
-	margin-bottom: auto;
+	text-align: center;
+	padding-top: 20px;
 
 	a {
-		background-color: rgba(88, 101, 242, 0.5);
+		background-color: rgba($button, 0.5);
 		padding: 10px;
 		border-radius: 5px;
-		-webkit-transition: background-color 0.5s ease;
-		-moz-transition: background-color 0.5s ease;
-		transition: background-color 0.5s ease;
+		transition: all 0.3s ease;
+		font-weight: 500;
+
 		&:hover {
-			background-color: rgba(88, 101, 242, 1);
-			-webkit-transition: background-color 0.5s ease;
-			-moz-transition: background-color 0.5s ease;
-			transition: background-color 0.5s ease;
+			background-color: rgba($button, 1);
 		}
 	}
 }

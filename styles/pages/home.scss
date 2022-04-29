@@ -32,14 +32,11 @@
 	}
 
 	i {
-		color: rgba(#fff, 0.6);
+		color: rgba($white, 0.6);
 		transition: all 0.2s ease;
 
 		&:hover {
-			color: rgba(#fff, 0.9);
+			color: rgba($white, 0.9);
 		}
 	}
-}
-
-.Socials {
 }

@@ -59,9 +59,9 @@ export const AnimeCard: React.FC<Props> = (props) => {
 				<motion.div animate={control} variants={variants2} initial="disabled" className="anime-eps">
 					<div className={`anime__eps-value ${hover ? "active" : ""}`.trim()}>
 						<a className="anime-title-link">
-							<h3 className="anime-title main" onClick={() => window.open(props.url)}>
+							<p className="anime-title main" onClick={() => window.open(props.url)}>
 								{props.title}
-							</h3>
+							</p>
 						</a>
 						<p>
 							{props.eps.count} / {props.eps.max} Eps

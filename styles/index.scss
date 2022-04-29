@@ -2,12 +2,17 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
 
 $Main: #18181b;
+$background: #0e0e10;
+$button: #29292e;
 
 $black: #000;
 $white: #fff;
+$blue: #007dff;
+$yellow: #ff0;
 
 @import "./components/navbar.scss";
 @import "./components/aboutText.scss";
+@import "./components/animeCard.scss";
 @import "./pages/home.scss";
 @import "./pages/about.scss";
 @import "./pages/404.scss";
@@ -25,7 +30,7 @@ $white: #fff;
 }
 
 body {
-	background-color: #0e0e10;
+	background-color: $background;
 	background-attachment: fixed;
 	min-height: 100vh;
 

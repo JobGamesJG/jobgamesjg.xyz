@@ -5,8 +5,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import { PulseLoader } from "react-spinners";
 
 export const AnimeListComp: React.FC<{ animes: AnimeList[] | null }> = ({ animes }) => {
-	const [count, setCount] = useState(10);
-	const onClick = () => setCount(count + 10);
+	const [count, setCount] = useState(12);
+	const onClick = () => setCount(count + 12);
 
 	return (
 		<AnimatePresence exitBeforeEnter>

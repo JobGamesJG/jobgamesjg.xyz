@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import type { NextPage } from "next";
 import Head from "next/head";
 import { calculateAge } from "../lib";
-import s from "../public/Error404.png";
 
 const Home: NextPage = () => {
 	const age = calculateAge();
@@ -21,22 +20,22 @@ const Home: NextPage = () => {
 						transition: { duration: 1, delay: 0.5, ease: [0.6, -0.05, 0.01, 0.99] },
 					}}
 					className="error404">
-					<div>
+					<div className="error404-text-wrapper">
 						<p className="error404-text">[404]</p>
 						<p className="error404-text">Page Not Found</p>
 					</div>
-				</motion.div>
-				<motion.div
-					initial={{ opacity: 0, y: 25 }}
-					animate={{
-						opacity: 1,
-						y: 0,
-						transition: { duration: 1, delay: 1, ease: [0.6, -0.05, 0.01, 0.99] },
-					}}
-					className="error404-button">
-					<a href="/">
-						<i className="fas fa-home"></i> Home
-					</a>
+					<motion.div
+						initial={{ opacity: 0, y: 25 }}
+						animate={{
+							opacity: 1,
+							y: 0,
+							transition: { duration: 1, delay: 1, ease: [0.6, -0.05, 0.01, 0.99] },
+						}}
+						className="error404-button">
+						<a href="/">
+							<i className="fas fa-home"></i> Home
+						</a>
+					</motion.div>
 				</motion.div>
 			</div>
 		</>

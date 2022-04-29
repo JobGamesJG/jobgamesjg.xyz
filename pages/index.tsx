@@ -67,8 +67,23 @@ const Home: NextPage = () => {
 						<a href="https://github.com/JobGamesJG">
 							<i className="fab fa-github"></i>
 						</a>
+						<a href="https://www.youtube.com/channel/UCB76PdQLx9wg4DCKbsVhyvA">
+							<i className="fab fa-youtube"></i>
+						</a>
+						<a href="https://www.twitch.tv/jobgamesjg">
+							<i className="fab fa-twitch"></i>
+						</a>
 						<a href="https://twitter.com/JobGamesJG">
 							<i className="fab fa-twitter"></i>
+						</a>
+						<a href="https://www.instagram.com/jobgamesjg/">
+							<i className="fab fa-instagram"></i>
+						</a>
+						<a href="https://www.tiktok.com/@jobgamesjg">
+							<i className="fab fa-tiktok"></i>
+						</a>
+						<a href="https://www.reddit.com/user/JobGamesJG">
+							<i className="fab fa-reddit"></i>
 						</a>
 					</motion.div>
 				</div>

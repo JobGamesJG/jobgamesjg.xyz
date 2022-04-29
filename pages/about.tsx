@@ -1,10 +1,23 @@
-import { AboutText } from "../components/about/index";
-import { calculateAge } from "../lib";
+import { AboutText, AnimeListComp } from "../components/about";
+import { AnimeList, calculateAge } from "../lib";
 import type { NextPage } from "next";
 import Head from "next/head";
+import React, { useEffect, useState } from "react";
+import axios, { AxiosError } from "axios";
 
 const About: NextPage = () => {
 	const age = calculateAge();
+	const [animes, setAnimes] = useState<AnimeList[] | null>(null);
+
+	useEffect(() => {
+		const { cancel, token } = axios.CancelToken.source();
+		axios
+			.get<{ animes: AnimeList[] }>("/api/anime", { cancelToken: token })
+			.then((res) => setAnimes(res.data.animes))
+			.catch((err: AxiosError) => console.error(`[Animes]: ${err.message}`));
+
+		return () => cancel("Request cancelled");
+	}, []);
 
 	return (
 		<>
@@ -25,6 +38,10 @@ const About: NextPage = () => {
 					</div>
 				</div>
 				<div className="about-breakline" />
+				<div className="anime">
+					<h1 className="anime-main-title">Animes</h1>
+					<AnimeListComp animes={animes} />
+				</div>
 			</div>
 		</>
 	);
