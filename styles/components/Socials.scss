@@ -1,0 +1,60 @@
+.Socials-button {
+	text-decoration: underline;
+	display: inherit;
+
+	user-select: none; /* standard syntax */
+	-webkit-user-select: none; /* webkit (safari, chrome) browsers */
+	-moz-user-select: none; /* mozilla browsers */
+	-khtml-user-select: none; /* webkit (konqueror) browsers */
+	-ms-user-select: none; /* IE10+ */
+
+	color: rgba($white, 0.6);
+	transition: all 0.2s ease;
+
+	&:hover {
+		color: rgba($white, 0.9);
+	}
+
+	&.active {
+		display: none;
+	}
+}
+
+.Socials {
+	width: 100vw;
+	height: 100vh;
+	left: 0px;
+	top: -100%;
+	opacity: 0;
+	transition: all 0.5s ease;
+	flex-direction: column;
+	list-style-type: none;
+	grid-gap: 0px;
+	margin-top: 0;
+	z-index: 999;
+	font-size: 30px;
+
+	display: flex;
+	position: fixed;
+	align-items: center;
+	justify-content: space-evenly;
+
+	a,
+	i {
+		color: rgba($white, 0.6);
+		transition: all 0.2s ease;
+
+		&:hover {
+			color: rgba($white, 0.9);
+		}
+	}
+
+	&.active {
+		background-color: rgba($black, 1);
+
+		top: 0;
+		opacity: 1;
+		padding-left: 0px;
+		margin-top: 0;
+	}
+}

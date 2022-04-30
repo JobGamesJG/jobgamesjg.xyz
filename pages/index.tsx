@@ -1,4 +1,5 @@
 import { motion, Variants } from "framer-motion";
+import Socials from "../components/socials";
 import type { NextPage } from "next";
 import { calculateAge } from "../lib";
 import Head from "next/head";
@@ -61,30 +62,7 @@ const Home: NextPage = () => {
 						animate="animate"
 						variants={variants3}
 						className="landing-socials">
-						<a href="https://discord.com/users/679240313952403457">
-							<i className="fab fa-discord"></i>
-						</a>
-						<a href="https://github.com/JobGamesJG">
-							<i className="fab fa-github"></i>
-						</a>
-						<a href="https://www.youtube.com/channel/UCB76PdQLx9wg4DCKbsVhyvA">
-							<i className="fab fa-youtube"></i>
-						</a>
-						<a href="https://www.twitch.tv/jobgamesjg">
-							<i className="fab fa-twitch"></i>
-						</a>
-						<a href="https://twitter.com/JobGamesJG">
-							<i className="fab fa-twitter"></i>
-						</a>
-						<a href="https://www.instagram.com/jobgamesjg/">
-							<i className="fab fa-instagram"></i>
-						</a>
-						<a href="https://www.tiktok.com/@jobgamesjg">
-							<i className="fab fa-tiktok"></i>
-						</a>
-						<a href="https://www.reddit.com/user/JobGamesJG">
-							<i className="fab fa-reddit"></i>
-						</a>
+						<Socials />
 					</motion.div>
 				</div>
 			</div>
