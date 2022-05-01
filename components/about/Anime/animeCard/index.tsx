@@ -68,7 +68,7 @@ export const AnimeCard: React.FC<Props> = (props) => {
 						<div className="anime-status">
 							<div className="placement-1">
 								<p className="anime-eps-total">
-									Eps {props.eps.count} / {props.eps.max}
+									Eps {props.eps_watchted} / {props.eps_num}
 								</p>
 								<p className="anime-watching">
 									<i className={props.icon} style={{ color: props.colour }} /> {props.status}

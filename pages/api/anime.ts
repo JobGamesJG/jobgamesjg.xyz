@@ -33,18 +33,22 @@ const Anime = async (_: NextApiRequest, res: NextApiResponse) => {
 		return choice;
 	};
 
-	const getRating = (rating: number): number => {
-		let choice;
-		rating == 0 ? (choice = "?") : (choice = rating.toString());
+	const getRating = (rating: string): string => {
+		let choice = rating;
+
+		if (rating == "0") {
+			choice = "?";
+		}
 
 		return choice;
 	};
 
-	const getEps = (eps: number, eps_num: string): string => {
-		let choice;
-		eps_num == "0" ? (eps_num = "?") : (eps_num = eps_num);
+	const getEps = (eps_num: string): string => {
+		let choice = eps_num;
 
-		choice = { count: eps, max: eps_num };
+		if (eps_num == "0") {
+			choice = "?";
+		}
 
 		return choice;
 	};
@@ -57,8 +61,9 @@ const Anime = async (_: NextApiRequest, res: NextApiResponse) => {
 
 	const { data } = response;
 	const animes = data.map<AnimeList>((anime) => ({
-		eps: getEps(anime.num_watched_episodes, anime.anime_num_episodes), //{ count: anime.num_watched_episodes, max: anime.anime_num_episodes },
 		img: anime.anime_image_path.replace("r/96x136/", ""),
+		eps_watchted: anime.num_watched_episodes,
+		eps_num: getEps(anime.anime_num_episodes), //{ count: anime.num_watched_episodes, max: anime.anime_num_episodes },
 		rating: getRating(anime.score),
 		title: anime.anime_title,
 		animeTypeIcon: getTypeIcon(anime.anime_media_type_string),

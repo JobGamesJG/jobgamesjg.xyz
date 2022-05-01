@@ -10,12 +10,12 @@ export interface InstagramList {
 
 export interface AnimeListRaw {
 	status: number;
-	score: number;
+	score: string;
 	tags: string;
 	is_rewatching: number;
 	num_watched_episodes: number;
 	anime_title: string;
-	anime_num_episodes: number;
+	anime_num_episodes: string;
 	anime_airing_status: number;
 	anime_id: number;
 	anime_studios: null;
@@ -41,10 +41,11 @@ export interface AnimeListRaw {
 
 export interface AnimeList {
 	img: string;
-	eps: { count: number; max: string };
+	eps_watchted: number;
+	eps_num: string;
 	status: string;
 	icon: string;
-	rating: number;
+	rating: string;
 	title: string;
 	animeTypeIcon: string;
 	animeType: string;
