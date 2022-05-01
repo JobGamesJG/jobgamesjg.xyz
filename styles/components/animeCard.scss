@@ -33,11 +33,13 @@
 }
 
 .anime-eps {
-	border-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
 	background-color: rgba($black, 0.8);
 	font-weight: 300;
 
 	width: 100%;
+	display: flex;
 	bottom: 0;
 	position: absolute;
 	z-index: 30;
@@ -49,8 +51,7 @@
 	transition: opacity 0.3s ease;
 
 	display: flex;
-	justify-content: center;
-	align-items: center;
+
 	flex-direction: column;
 
 	&.active {
@@ -66,16 +67,6 @@
 	background-color: $black;
 }
 
-.anime-status {
-	width: 100%;
-
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	align-items: center;
-	font-weight: 300;
-}
-
 .anime-title-link {
 	cursor: pointer;
 
@@ -89,33 +80,69 @@
 .anime-title {
 	font-size: 0.9rem;
 	font-weight: 400;
-	text-align: center;
+	text-align: left;
 	text-overflow: ellipsis;
 	overflow: hidden;
 	white-space: nowrap;
 
 	&.main {
-		line-height: 20px;
+		font-size: 0.9rem;
+		text-align: center;
 
 		overflow: unset;
 		white-space: unset;
 		text-overflow: unset;
 		word-break: normal;
 
-		max-width: 175px;
-		margin-bottom: 1rem;
+		max-width: 190px;
 	}
 }
 
+.anime-status {
+	display: inline-flex;
+	align-items: flex-end;
+	width: 175px;
+
+	height: inherit;
+
+	font-weight: 300;
+}
+
+.placement-1 {
+	width: 83px;
+	text-align: left;
+}
+
+.placement-2 {
+	width: 83px;
+	text-align: right;
+}
+
+.anime-eps-total {
+	width: 100px;
+	height: 20px;
+}
+
+.anime-watching {
+	width: 130px;
+	height: 20px;
+}
+
 .anime-rating {
+	width: 100px;
+	height: 20px;
+
 	> i {
 		color: $yellow;
 	}
 }
 
 .anime-type {
+	width: 100px;
+	height: 20px;
+
 	> i {
-		color: $blue;
+		color: $white;
 	}
 }
 

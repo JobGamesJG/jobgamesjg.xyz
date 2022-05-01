@@ -7,6 +7,7 @@ type Props = AnimeList & { number: number };
 export const AnimeCard: React.FC<Props> = (props) => {
 	const [hover, setHover] = useState(false);
 	const control = useAnimation();
+	console.log(props.title.length);
 
 	const variants: Variants = {
 		initial: { opacity: 0 },
@@ -21,7 +22,7 @@ export const AnimeCard: React.FC<Props> = (props) => {
 
 	const variants2: Variants = {
 		disabled: {
-			height: 300,
+			height: 0,
 			padding: 10,
 			opacity: 0,
 			transition: {
@@ -30,7 +31,7 @@ export const AnimeCard: React.FC<Props> = (props) => {
 			},
 		},
 		enabled: {
-			height: 300,
+			height: 130,
 			padding: 10,
 			opacity: 1,
 			transition: {
@@ -63,19 +64,24 @@ export const AnimeCard: React.FC<Props> = (props) => {
 								{props.title}
 							</p>
 						</a>
-						<p>
-							{props.eps.count} / {props.eps.max} Eps
-						</p>
+
 						<div className="anime-status">
-							<p className="anime-watching">
-								<i className={props.icon} style={{ color: props.colour }} /> {props.status}
-							</p>
-							<p className="anime-type">
-								<i className={props.animeTypeIcon}></i> {props.animeType}
-							</p>
-							<p className="anime-rating">
-								<i className="fas fa-star"></i> {props.rating}
-							</p>
+							<div className="placement-1">
+								<p className="anime-eps-total">
+									Eps {props.eps.count} / {props.eps.max}
+								</p>
+								<p className="anime-watching">
+									<i className={props.icon} style={{ color: props.colour }} /> {props.status}
+								</p>
+							</div>
+							<div className="placement-2">
+								<p className="anime-type">
+									{props.animeType} <i className={props.animeTypeIcon}></i>
+								</p>
+								<p className="anime-rating">
+									{props.rating} <i className="fas fa-star"></i>
+								</p>
+							</div>
 						</div>
 					</div>
 				</motion.div>

@@ -1,6 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import type { AnimeList, AnimeListRaw } from "../../lib/types";
 import axios from "axios";
+import { title } from "process";
 
 const Anime = async (_: NextApiRequest, res: NextApiResponse) => {
 	const getStatus = (status: number): string => {
@@ -32,6 +33,22 @@ const Anime = async (_: NextApiRequest, res: NextApiResponse) => {
 		return choice;
 	};
 
+	const getRating = (rating: number): number => {
+		let choice;
+		rating == 0 ? (choice = "?") : (choice = rating.toString());
+
+		return choice;
+	};
+
+	const getEps = (eps: number, eps_num: string): string => {
+		let choice;
+		eps_num == "0" ? (eps_num = "?") : (eps_num = eps_num);
+
+		choice = { count: eps, max: eps_num };
+
+		return choice;
+	};
+
 	const response = await axios
 		.get<AnimeListRaw[]>("https://myanimelist.net/animelist/JobGamesJG/load.json?status=7&offset=0")
 		.catch(() => null);
@@ -40,9 +57,9 @@ const Anime = async (_: NextApiRequest, res: NextApiResponse) => {
 
 	const { data } = response;
 	const animes = data.map<AnimeList>((anime) => ({
-		eps: { count: anime.num_watched_episodes, max: anime.anime_num_episodes },
+		eps: getEps(anime.num_watched_episodes, anime.anime_num_episodes), //{ count: anime.num_watched_episodes, max: anime.anime_num_episodes },
 		img: anime.anime_image_path.replace("r/96x136/", ""),
-		rating: anime.score,
+		rating: getRating(anime.score),
 		title: anime.anime_title,
 		animeTypeIcon: getTypeIcon(anime.anime_media_type_string),
 		animeType: anime.anime_media_type_string,

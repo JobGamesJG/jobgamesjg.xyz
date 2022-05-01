@@ -41,7 +41,7 @@ export interface AnimeListRaw {
 
 export interface AnimeList {
 	img: string;
-	eps: { count: number; max: number };
+	eps: { count: number; max: string };
 	status: string;
 	icon: string;
 	rating: number;
