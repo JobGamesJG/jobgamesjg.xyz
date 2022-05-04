@@ -22,7 +22,16 @@ const About: NextPage = () => {
 	return (
 		<>
 			<Head>
-				<title>JobGamesJG - about</title>
+				<title>JobGamesJG - About</title>
+				<meta property="og:site_name" content="JobGamesJG" />
+				<meta property="og:title" content="JobGamesJG" />
+				<meta property="og:type" content="site" />
+				<meta property="og:url" content="https://jobgamesjg.xyz/about" />
+				<meta
+					property="og:description"
+					content={`Hello, my name is Job! ${age} year-old programmer from the Netherlands. This is my personal website, feel free to check it out!`}
+				/>
+				<meta property="og:image" content="https://static.daangamesdg.xyz/discord/pfp.gif" />
 			</Head>
 			<div className="about">
 				<div className="about-me">
