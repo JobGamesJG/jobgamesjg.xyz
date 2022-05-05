@@ -5,19 +5,19 @@ const Socials: React.FC = () => {
 
 	return (
 		<>
-			<p className="Socials-button" onClick={() => setActive(!active)}>
+			<p className="socials-button" onClick={() => setActive(!active)}>
 				{"Socials >"}
 			</p>
-			<div className={active ? "Socials-wrapper active" : "Socials-wrapper"}>
-				<div className="Socials">
-					<div className="Socials-placement">
-						<div className="Socials-header">
+			<div className={active ? "socials-wrapper active" : "socials-wrapper"}>
+				<div className="socials">
+					<div className="socials-placement">
+						<div className="socials-header">
 							<p>Socials</p>
 							<a onClick={() => setActive(!active)}>
 								<i className="fas fa-times"></i>
 							</a>
 						</div>
-						<div className="Socials-items">
+						<div className="socials-items">
 							<a href="https://discord.com/users/679240313952403457">
 								<i className="fab fa-discord"></i> Discord
 							</a>
