@@ -32,9 +32,9 @@ export const AnimeListComp: React.FC<{ animes: AnimeList[] | null }> = ({ animes
 							))}
 					</motion.div>
 					{count < animes.length && (
-						<p className="animes-load-more" onClick={onClick}>
-							Load more
-						</p>
+						<div className="animes-load-more" onClick={onClick}>
+							<p>Load more</p>
+						</div>
 					)}
 				</>
 			) : (

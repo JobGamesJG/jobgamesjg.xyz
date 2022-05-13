@@ -142,27 +142,35 @@
 	height: 20px;
 
 	> i {
-		color: $white;
+		color: $accent;
 	}
 }
 
 .animes-load-more {
-	text-align: center;
-	max-width: fit-content;
 	cursor: pointer;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	display: inline-flex;
 
-	font-size: 2rem;
-	font-weight: 500;
-	border-radius: 5px;
-	padding: 5px;
+	border-radius: 2.5rem;
+	width: 225px;
+	height: 52px;
 
-	margin-top: 2rem;
-	margin-bottom: 1rem;
+	font-weight: 700;
+	font-size: 17px;
+	line-height: 20px;
 
-	background-color: rgba($button, 0.5);
+	padding-left: 32px;
+	padding-right: 32px;
+
+	margin-bottom: 16px;
+	margin-top: 16px;
+
 	transition: all 0.3s ease;
+	background-color: rgba($accent, 1);
 
 	&:hover {
-		background-color: rgba($button, 1);
+		background-color: rgba($accent, 0.9);
 	}
 }

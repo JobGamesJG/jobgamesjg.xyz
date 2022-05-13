@@ -1,13 +1,3 @@
-export interface InstagramListRaw {
-	full_name: string;
-	profile_pic_url_hd: string;
-}
-
-export interface InstagramList {
-	name: string;
-	pfp: string;
-}
-
 export interface AnimeListRaw {
 	status: number;
 	score: string;
