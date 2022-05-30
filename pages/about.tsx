@@ -31,7 +31,10 @@ const About: NextPage = () => {
 					property="og:description"
 					content={`Hello, my name is Job! ${age} year-old programmer from the Netherlands. This is my personal website, feel free to check it out!`}
 				/>
-				<meta property="og:image" content="https://static.daangamesdg.xyz/discord/pfp.gif" />
+				<meta
+					property="og:image"
+					content="https://lh3.googleusercontent.com/ogw/ADea4I56cV0MI-3fEb1-xju9CNHA1Dmjnli66rEgwU-hsQ=s256-c-mo"
+				/>
 			</Head>
 			<div className="about">
 				<div className="about-me">
