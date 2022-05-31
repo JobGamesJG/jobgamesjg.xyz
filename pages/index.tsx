@@ -109,10 +109,7 @@ const Home: NextPage = () => {
 							</div>
 						</div>
 						<div className="home-img-main">
-							<img
-								alt=""
-								src="https://qph.cf2.quoracdn.net/main-qimg-c9eab7e23f8d6c769d40acdcd7ee8f13"
-							/>
+							<img alt="" src="https://cdn.jobgamesjg.xyz/files/jobgamesjg-char.png?raw=true" />
 						</div>
 					</div>
 				</div>
