@@ -11,7 +11,7 @@
 	margin-top: 60px;
 	position: relative;
 	z-index: 3;
-	background-image: url("https://zoro.to/images/zoro-bg.jpg");
+	background-image: url("https://cdn.jobgamesjg.xyz/files/jobgamesjg-bg.png");
 	background-position: 50% 25%;
 	background-size: cover;
 	display: grid;
@@ -26,6 +26,7 @@
 	margin-right: auto;
 	margin-left: auto;
 	display: flex;
+	justify-content: space-between;
 }
 
 .home-content {
@@ -109,6 +110,23 @@
 	}
 }
 
+.home-action {
+	width: 90%;
+	height: auto;
+	display: block;
+	justify-content: center;
+	text-align: center;
+	background-color: $accent;
+	border-radius: 0 0 30px 30px;
+
+	padding: 15px 20px;
+	font-weight: 600;
+
+	a {
+		width: 100%;
+	}
+}
+
 @media screen and (max-width: 960px) {
 	.home-text {
 		h1 {
@@ -174,6 +192,12 @@
 		img {
 			display: none;
 		}
+	}
+
+	.home-action {
+		border-radius: 30px;
+		transform: translateY(-50%);
+		z-index: 10;
 	}
 }
 
