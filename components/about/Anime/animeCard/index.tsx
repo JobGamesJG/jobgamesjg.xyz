@@ -7,7 +7,6 @@ type Props = AnimeList & { number: number };
 export const AnimeCard: React.FC<Props> = (props) => {
 	const [hover, setHover] = useState(false);
 	const control = useAnimation();
-	console.log(props.title.length);
 
 	const variants: Variants = {
 		initial: { opacity: 0 },
