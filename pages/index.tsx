@@ -116,6 +116,10 @@ const Home: NextPage = () => {
 						</div>
 					</div>
 				</div>
+				<div className="home-action">
+					<p>View about me</p>
+					<i className="fab fa-reddit"></i>
+				</div>
 			</div>
 		</>
 	);
