@@ -4,6 +4,10 @@
 	place-items: center;
 }
 
+.img-fix {
+	background: linear-gradient(180deg, rgba($Main, 1), rgba($Main, 0.5));
+}
+
 .home-img-wrapper {
 	width: 100vw;
 	padding: 0;
@@ -50,12 +54,12 @@
 
 	display: flex;
 	align-items: center;
-	font-weight: 500;
-	font-size: 33px;
+	font-weight: 700;
+	font-size: 36px;
 
 	img {
 		height: auto;
-		width: 70px;
+		width: 65px;
 
 		margin-right: 10px;
 		border-radius: 100%;
@@ -179,6 +183,10 @@
 		}
 	}
 
+	.home-socials {
+		font-size: 13px;
+	}
+
 	.home-img-main {
 		img {
 			width: 60%;
@@ -240,7 +248,7 @@
 		text-align: center;
 		display: flex;
 		justify-content: center;
-		grid-gap: 4px;
+		grid-gap: 0px;
 
 		.socials-name {
 			display: none;
