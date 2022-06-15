@@ -33,7 +33,7 @@
 }
 
 .navlink {
-	color: rgba($white, 0.3);
+	color: rgba($white, 1);
 	transition: color 0.1s ease;
 
 	font-weight: bold;
@@ -46,7 +46,7 @@
 	}
 
 	&:hover {
-		color: rgba($white, 0.6);
+		color: rgba($white, 0.3);
 	}
 }
 
@@ -89,14 +89,14 @@
 
 .navbar-link {
 	transition: all 0.2s ease;
-	color: rgba($white, 0.6);
+	color: rgba($white, 1);
 
 	&.active {
-		color: rgba($white, 0.9);
+		color: rgba($accent, 1);
 	}
 
 	&:hover {
-		color: rgba($white, 0.9);
+		color: rgba($accent, 1);
 	}
 }
 
