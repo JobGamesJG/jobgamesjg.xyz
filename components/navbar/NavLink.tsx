@@ -16,6 +16,7 @@ const NavLink: React.FC<Props> = ({ href, name, onClick }) => {
 		<Link href={href}>
 			<a onClick={onClick} className={className}>
 				{name}
+				<div className="navbar-link-line"></div>
 			</a>
 		</Link>
 	);
