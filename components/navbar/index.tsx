@@ -35,11 +35,11 @@ const Navbar: React.FC = () => {
 				</div>
 				<div className={active ? "mobile-navbar active" : "mobile-navbar"}>
 					<div className={active ? "mobile-routes active" : "mobile-routes"}>
-						<NavLink href="/" name="Home" onClick={() => setNavOpen(false) & setActive(!active)} />
+						<NavLink href="/" name="Home" onClick={() => [setNavOpen(false), setActive(!active)]} />
 						<NavLink
 							href="/about"
 							name="About"
-							onClick={() => setNavOpen(false) & setActive(!active)}
+							onClick={() => [setNavOpen(false), setActive(!active)]}
 						/>
 					</div>
 				</div>
