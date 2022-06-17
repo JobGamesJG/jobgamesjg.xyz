@@ -8,16 +8,12 @@ export const AboutText: React.FC = () => {
 			<h1 className="about-title">About Me</h1>
 			<div className="about-text-items">
 				<p className="about-text">
-					Hello, my name Job Klarenbeek, but I&apos;m mostly known as JobGamesJG. I am a {age}{" "}
-					year-old programmer from the Netherlands and the creator of some awsome texture packs.
-				</p>
-				<p className="about-text">
-					In my free time <del>I sleep a lot</del>, watch anime or play games. I also do sports,
-					Hockey and I&apos;m pretty good at it.
-				</p>
-				<p className="about-text">
-					That&apos;s all I wanna say about my live. There aren&apos;t any other special things I do
-					besides programing and making texture packs, after all I am just a normal person.
+					Hi, I&apos;m Job, {age} year-old programmer from the Netherlands. The “computer nerd” of
+					the family if you don&apos;t count my brother then😶. I began programming when I was 12
+					and I haven&apos;t stopped ever since. In my free time <del>I sleep a lot</del>, watch a
+					lot and I mean a lot of anime or play games. I also play sports, Hockey and I&apos;m
+					pretty good at it. That&apos;s all I wanna say about my live. There aren&apos;t many
+					things I want to tell about my live😑.
 				</p>
 			</div>
 		</div>

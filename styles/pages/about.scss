@@ -1,6 +1,6 @@
 .about {
 	margin-top: 5rem;
-	max-width: 70vw;
+	max-width: 80vw;
 
 	margin-left: auto;
 	margin-right: auto;
@@ -21,13 +21,69 @@
 }
 
 .about-img {
-	min-width: 250px;
-	min-height: 250px;
-	max-width: 250px;
-	max-width: 250px;
+	width: 300px;
+	width: 300px;
 	border-radius: 10px;
 	margin-bottom: 0.5rem;
 	background-color: rgba($black, 0.3);
+}
+
+.about-info {
+	margin-left: 50px;
+	margin-bottom: 10px;
+}
+
+.about-title {
+	font-size: 50px;
+	font-weight: 500;
+}
+
+.about-text {
+	font-size: 20px;
+	font-weight: 300;
+
+	margin-top: 10px;
+	&:first-child {
+		margin-top: 0px;
+	}
+}
+
+.about-socials {
+	cursor: pointer;
+	display: flex;
+	width: 300px;
+	margin-left: 50px;
+
+	div {
+		display: flex;
+		flex-direction: column;
+		width: max-content;
+	}
+
+	div:last-child {
+		margin-left: 30px;
+	}
+
+	a {
+		transition: all 0.3s ease;
+		width: fit-content;
+		padding: 5px 5px 5px 5px;
+		border-radius: 5px;
+
+		&:hover {
+			background-color: $accent;
+
+			i {
+				color: $white;
+			}
+		}
+	}
+
+	i {
+		transition: all 0.3s ease;
+		margin-right: 10px;
+		color: rgba($accent, 0.6);
+	}
 }
 
 .about-breakline {

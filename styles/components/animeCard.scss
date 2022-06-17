@@ -16,164 +16,191 @@
 	display: grid;
 	grid-template-columns: repeat(auto-fill, 200px);
 	justify-content: center;
-	grid-gap: 20px;
+	grid-gap: 10px;
 	width: 100%;
 	height: 100%;
 }
 
 .anime-card {
 	max-width: 200px;
-	max-height: 350px;
-}
-
-.anime-img-info {
-	text-align: center;
 	max-height: 300px;
-	margin-bottom: 5px;
+	border-radius: 5px;
 
 	position: relative;
-}
-
-.anime-eps {
-	border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;
-	background-color: rgba($black, 0.8);
-	font-weight: 300;
-
-	width: 100%;
-	display: flex;
-	bottom: 0;
-	position: absolute;
-	z-index: 30;
-	backdrop-filter: blur(5px);
-}
-
-.anime__eps-value {
-	height: 100%;
-	opacity: 0;
-	transition: opacity 0.3s ease;
-
-	display: flex;
-
-	flex-direction: column;
-
-	&.active {
-		opacity: 1;
-		transition: opacity 0.5s ease 0.15s;
-	}
+	width: fit-content;
 }
 
 .anime-img {
+	user-select: none; /* standard syntax */
+	-webkit-user-select: none; /* webkit (safari, chrome) browsers */
+	-moz-user-select: none; /* mozilla browsers */
+	-khtml-user-select: none; /* webkit (konqueror) browsers */
+	-ms-user-select: none; /* IE10+ */
+
 	width: 200px;
 	height: 300px;
-	border-radius: 5px;
+	border-radius: inherit;
+
 	background-color: $black;
 }
 
-.anime-title-link {
+.anime-info {
+	transition: all 0.4s ease;
+	background-color: $black;
+	position: absolute;
+	width: 200px;
+	height: 300px;
+	opacity: 0;
+	top: 0;
+	z-index: 40;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	border-radius: inherit;
 	cursor: pointer;
 
-	> P {
-		font-size: 18px;
-		font-weight: 500;
-		color: $white;
+	&.active {
+		background-color: rgba($black, 0.4);
+		opacity: 1;
 	}
 }
 
 .anime-title {
-	font-size: 0.9rem;
-	font-weight: 400;
-	text-align: left;
-	text-overflow: ellipsis;
-	overflow: hidden;
-	white-space: nowrap;
-
-	&.main {
-		font-size: 0.9rem;
-		text-align: center;
-
-		overflow: unset;
-		white-space: unset;
-		text-overflow: unset;
-		word-break: normal;
-
-		max-width: 190px;
-	}
-}
-
-.anime-status {
-	display: inline-flex;
-	align-items: flex-end;
-	width: 175px;
-
-	height: inherit;
-
-	font-weight: 300;
-}
-
-.placement-1 {
-	width: 83px;
-	text-align: left;
-}
-
-.placement-2 {
-	width: 83px;
-	text-align: right;
-}
-
-.anime-eps-total {
-	width: 100px;
-	height: 20px;
-}
-
-.anime-watching {
-	width: 130px;
-	height: 20px;
-}
-
-.anime-rating {
-	width: 100px;
-	height: 20px;
-
-	> i {
-		color: $yellow;
-	}
-}
-
-.anime-type {
-	width: 100px;
-	height: 20px;
-
-	> i {
-		color: $accent;
-	}
-}
-
-.animes-load-more {
-	cursor: pointer;
 	text-align: center;
+
+	font-size: 18px;
+	font-weight: 500;
+}
+
+.anime-popup-wrapper {
+	background-color: rgba($black, 0.7);
+	backdrop-filter: blur(10px);
+	width: 100vw;
+	height: 100vh;
+	left: 0px;
+	top: 0;
+	opacity: 0;
+	transition: all 0.2s ease;
+	flex-direction: column;
+	list-style-type: none;
+	grid-gap: 0px;
+	margin-top: 0;
+	z-index: -1;
+
+	display: flex;
+	position: fixed;
 	align-items: center;
-	justify-content: center;
-	display: inline-flex;
+	justify-content: space-evenly;
 
-	border-radius: 2.5rem;
-	width: 225px;
-	height: 52px;
-
-	font-weight: 700;
-	font-size: 17px;
-	line-height: 20px;
-
-	padding-left: 32px;
-	padding-right: 32px;
-
-	margin-bottom: 16px;
-	margin-top: 16px;
-
-	transition: all 0.3s ease;
-	background-color: rgba($accent, 1);
-
-	&:hover {
-		background-color: rgba($accent, 0.9);
+	&.active {
+		z-index: 10000;
+		top: 0;
+		opacity: 1;
+		padding-left: 0px;
 	}
+}
+
+.anime-popup {
+	width: 100vw;
+	height: 100vh;
+	transform: scale(0.9);
+	left: 0px;
+	top: 0;
+	opacity: 0;
+	transition: all 0.2s ease;
+	flex-direction: column;
+	list-style-type: none;
+	grid-gap: 0px;
+	margin-top: 0;
+	z-index: -1;
+	font-size: 30px;
+
+	display: flex;
+	position: fixed;
+	align-items: center;
+	justify-content: space-evenly;
+
+	&.active {
+		z-index: 1000;
+		transform: scale(1);
+		top: 0;
+		opacity: 1;
+		padding-left: 0px;
+		margin-top: 0;
+	}
+}
+
+.anime-popup-inner {
+	background-color: rgba($main, 1);
+	border-radius: 10px;
+
+	width: 700px;
+	height: fit-content;
+	display: block;
+	align-items: center;
+
+	padding: 0px 24px 12px 24px;
+}
+
+.popup-placement {
+	width: 100%;
+	height: auto;
+}
+
+.popup-header {
+	width: 100%;
+	height: 73px;
+	font-size: 24px;
+
+	display: flex;
+	align-items: center;
+	text-align: right;
+	align-items: center;
+	justify-content: space-between;
+	border-bottom: 1px solid rgba($border, 0.2);
+
+	p {
+		font-weight: 600;
+		margin-left: 12px;
+	}
+
+	> a {
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		margin-right: 12px;
+
+		i,
+		p {
+			color: rgba($white, 0.6);
+			transition: all 0.2s ease;
+		}
+
+		&:hover {
+			i,
+			p {
+				color: rgba($white, 0.9);
+			}
+		}
+	}
+}
+
+.popup-info {
+	display: grid;
+	padding: 10px 20px 0px 20px;
+
+	p {
+		width: 400px;
+		font-size: 17px;
+		font-weight: 500;
+	}
+}
+
+.popup-item {
+	display: flex;
+}
+
+.popup-text {
+	color: rgba($white, 0.6);
 }

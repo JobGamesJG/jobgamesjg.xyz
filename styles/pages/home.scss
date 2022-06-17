@@ -1,287 +1,47 @@
 .home-wrapper {
+	min-height: 90vh;
+	min-width: 100vw;
 	display: grid;
 	place-items: center;
 }
 
-.home-img-wrapper {
-	width: 100vw;
-	margin-top: 60px;
-	background-image: url("https://cdn.jobgamesjg.xyz/files/jobgamesjg-bg.png");
-	background-position: 50% 25%;
-	background-size: cover;
-	display: grid;
-}
-
-.img-fix {
-	background: linear-gradient(180deg, rgba($Main, 1), rgba($Main, 0.5));
-}
-
-.home {
-	max-width: 70vw;
-
-	margin-left: auto;
-	margin-right: auto;
-
-	//	padding: 0px 20px 0px 20px;
-
-	height: 400px;
+.home-title {
 	display: flex;
-	justify-content: space-between;
-}
+	font-weight: 600;
+	font-size: 50px;
+	text-align: left;
 
-.home-content {
-	height: fit-content;
-	padding-top: 100px;
-	padding-bottom: 100px;
-	display: grid;
-}
-
-.home-logo {
-	width: auto;
-	height: max-content;
-
-	margin-bottom: 5px;
-
-	display: flex;
-	align-items: center;
-	font-size: 2.2rem;
-	font-weight: 500;
-
-	img {
-		height: auto;
-		width: 55px;
-
+	> h1 {
 		margin-right: 10px;
-		border-radius: 100%;
+		font-weight: inherit;
+		font-size: inherit;
+	}
+
+	> h1:last-child {
+		color: $accent;
 	}
 }
 
-.home-text {
-	width: max-content;
-
-	h1 {
-		font-weight: 600;
-		font-size: 45px;
-		text-align: left;
-	}
-
-	p {
-		font-weight: 300;
-		font-size: 25px;
-		text-align: left;
-		transform: translateY(-13px);
-	}
-}
-
-.home-socials {
-	cursor: pointer;
-
-	display: grid;
-	grid-template-columns: repeat(auto-fill, 110px);
-	grid-gap: 4px;
-
-	P {
-		width: max-content;
-		transition: all 0.15s ease;
-		background-color: rgba($accent, 0);
-		border-radius: 10rem;
-		padding: 5px;
-
-		&:hover {
-			background-color: rgba($accent, 1);
-			i,
-			a {
-				color: rgba($white, 1);
-			}
-		}
-	}
-
-	i,
-	a {
-		color: rgba($white, 0.6);
-	}
-}
-
-.home-img-main {
-	display: flex;
-	align-self: flex-end;
-	justify-self: right;
-	right: 0px;
-	bottom: 0;
-	width: 390px;
-
-	img {
-		width: 100%;
-		height: auto;
-	}
+.home-info {
+	font-weight: 400;
+	font-size: 30px;
+	transform: translateY(-15px);
+	text-align: left;
 }
 
 .home-action {
-	max-width: 70vw;
-	width: 100%;
+	width: fit-content;
 	height: auto;
 	display: block;
 	justify-content: center;
 	text-align: center;
 	background-color: $accent;
-	border-radius: 0 0 30px 30px;
+	border-radius: 30px;
 
 	padding: 15px 20px;
 	font-weight: 600;
 
 	a {
 		width: 100%;
-	}
-}
-
-@media screen and (max-width: 960px) {
-	.home-text {
-		h1 {
-			font-size: 33px;
-		}
-
-		p {
-			font-size: 18px;
-		}
-	}
-
-	.home-img-main {
-		width: 100%;
-	}
-}
-
-@media screen and (max-width: 700px) {
-	.home {
-		justify-content: center;
-	}
-	.home-logo {
-		justify-content: center;
-
-		img {
-			margin-right: 0px;
-		}
-	}
-
-	.home-text {
-		text-align: center;
-		display: inline;
-		width: auto;
-
-		h1 {
-			text-align: center;
-		}
-
-		p {
-			text-align: center;
-		}
-	}
-
-	.home-socials {
-		font-size: 13px;
-		justify-content: center;
-	}
-
-	.home-img-main {
-		display: none;
-	}
-}
-
-@media screen and(max-width:580px) {
-	.home {
-		display: grid;
-	}
-
-	.home-content {
-		display: grid;
-	}
-
-	.home-text {
-		h1 {
-			font-size: 30px;
-		}
-
-		p {
-			font-size: 15px;
-		}
-	}
-
-	.home-action {
-		border-radius: 30px;
-		transform: translateY(-50%);
-		z-index: 10;
-	}
-}
-
-@media screen and (max-width: 400px) {
-	.home-logo {
-		height: 50px;
-
-		font-weight: 500;
-		font-size: 25px;
-
-		img {
-			width: 50px;
-		}
-	}
-
-	.home-text {
-		transform: none;
-		text-align: center;
-
-		h1 {
-			font-size: 25px;
-		}
-
-		p {
-			font-size: 15px;
-		}
-	}
-
-	.home-socials {
-		text-align: center;
-		display: flex;
-		justify-content: center;
-		grid-gap: 0px;
-
-		.socials-name {
-			display: none;
-		}
-	}
-}
-
-@media screen and (max-width: 230px) {
-	.home-logo {
-		height: unset;
-
-		font-weight: unset;
-		font-size: unset;
-
-		img {
-			width: 40px;
-		}
-	}
-
-	.home-text {
-		transform: none;
-		text-align: center;
-
-		h1 {
-			font-size: 25px;
-		}
-
-		p {
-			font-size: 15px;
-		}
-	}
-
-	.home-socials {
-		text-align: center;
-		display: flex;
-		justify-content: center;
-		grid-gap: 0px;
-
-		.socials-name {
-			display: none;
-		}
 	}
 }

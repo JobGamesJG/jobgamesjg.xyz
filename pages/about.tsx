@@ -1,4 +1,4 @@
-import { AboutText, AnimeListComp } from "../components/about";
+import { AboutText, Socials, AnimeListComp } from "../components/about";
 import { AnimeList, calculateAge } from "../lib";
 import type { NextPage } from "next";
 import Head from "next/head";
@@ -6,8 +6,8 @@ import React, { useEffect, useState } from "react";
 import axios, { AxiosError } from "axios";
 
 const About: NextPage = () => {
-	const age = calculateAge();
 	const [animes, setAnimes] = useState<AnimeList[] | null>(null);
+	const age = calculateAge();
 
 	useEffect(() => {
 		const { cancel, token } = axios.CancelToken.source();
@@ -47,6 +47,7 @@ const About: NextPage = () => {
 					</div>
 					<div>
 						<AboutText />
+						<Socials />
 					</div>
 				</div>
 				<div className="about-breakline" />
