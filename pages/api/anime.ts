@@ -4,6 +4,8 @@ import axios from "axios";
 import { title } from "process";
 
 const Anime = async (_: NextApiRequest, res: NextApiResponse) => {
+	let numberTotal = 0;
+
 	const getStatus = (status: number): string => {
 		const choice = ["watching", "completed", "on hold", "dropped", "", "plan to watch"][status - 1];
 		return choice;

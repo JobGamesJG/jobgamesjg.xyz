@@ -1,6 +1,7 @@
 import { motion, useAnimation, Variants } from "framer-motion";
 import type { AnimeList } from "../../../../lib";
 import React, { useEffect, useState } from "react";
+import { PulseLoader } from "react-spinners";
 
 type Props = AnimeList & { number: number };
 
@@ -15,25 +16,6 @@ export const AnimeCard: React.FC<Props> = (props) => {
 			opacity: 1,
 			transition: {
 				duration: 0.5 + 0.2 * (props.number % 10 || 10),
-				ease: [0.6, -0.05, 0.01, 0.99],
-			},
-		},
-	};
-
-	const variants2: Variants = {
-		disabled: {
-			padding: 10,
-			opacity: 0,
-			transition: {
-				duration: 0.3,
-				ease: [0.6, -0.05, 0.01, 0.99],
-			},
-		},
-		enabled: {
-			padding: 10,
-			opacity: 1,
-			transition: {
-				duration: 0.3,
 				ease: [0.6, -0.05, 0.01, 0.99],
 			},
 		},
@@ -78,7 +60,8 @@ export const AnimeCard: React.FC<Props> = (props) => {
 									</p>
 								</div>
 								<div className="popup-item">
-									<p className="popup-text">rating:</p> <p className="popup-prop">{props.rating}</p>
+									<p className="popup-text">rating:</p>
+									<p className="popup-prop">0 / {props.rating}</p>
 								</div>
 								<div className="popup-item">
 									<p className="popup-text">type:</p>

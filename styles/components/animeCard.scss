@@ -1,5 +1,4 @@
 .anime {
-	margin-bottom: 5rem;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -19,6 +18,8 @@
 	grid-gap: 10px;
 	width: 100%;
 	height: 100%;
+
+	margin-bottom: 1rem;
 }
 
 .anime-card {
@@ -203,4 +204,19 @@
 
 .popup-text {
 	color: rgba($white, 0.6);
+}
+
+.animes-load-more {
+	cursor: pointer;
+	width: 20%;
+	height: auto;
+	display: block;
+	justify-content: center;
+	text-align: center;
+	background-color: #4071f4;
+	border-radius: 30px;
+	padding: 15px 20px;
+	font-weight: 600;
+
+	margin-bottom: 1rem;
 }
