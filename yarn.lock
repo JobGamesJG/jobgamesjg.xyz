@@ -2878,15 +2878,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-loading-skeleton@npm:^3.1.0":
-  version: 3.1.0
-  resolution: "react-loading-skeleton@npm:3.1.0"
-  peerDependencies:
-    react: ">=16.8.0"
-  checksum: 53d257c88e442e979fb9148ae826fc998a5a54c08a01e894395cf1ebb1e1c83e426f9c4884800e5564ba3308cf33e32d3abc75e07589ae0b48e4a2ed544fda2a
-  languageName: node
-  linkType: hard
-
 "react-spinners@npm:^0.12.0":
   version: 0.12.0
   resolution: "react-spinners@npm:0.12.0"
