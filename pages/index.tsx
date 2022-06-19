@@ -60,17 +60,16 @@ const Home: NextPage = () => {
 			<div className="home-wrapper">
 				<div className="home">
 					<div className="home-text">
-						<motion.div variants={variants3} initial="initial" animate="animate">
-							<div className="home-title">
-								<h1>Hi, I am</h1> <h1>Job</h1>
-							</div>
+						<motion.div
+							className="home-title"
+							variants={variants3}
+							initial="initial"
+							animate="animate">
+							<h1>Hi, I am</h1> <h1>Job</h1>
 						</motion.div>
 						<div className="home-info">
 							<motion.p variants={variants2} initial="initial" animate="animate">
-								{age} year-old anime enjoyer and programmer
-							</motion.p>
-							<motion.p variants={variants2_5} initial="initial" animate="animate">
-								🐒👍🏾
+								{age} year-old anime enjoyer and programmer🐒👍🏾
 							</motion.p>
 						</div>
 					</div>
