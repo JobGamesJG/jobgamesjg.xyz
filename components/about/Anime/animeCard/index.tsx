@@ -1,13 +1,19 @@
-import { motion, useAnimation, Variants } from "framer-motion";
+import { motion, AnimatePresence, useAnimation, Variants } from "framer-motion";
 import type { AnimeList } from "../../../../lib";
 import React, { useEffect, useState } from "react";
 import { PulseLoader } from "react-spinners";
 
 type Props = AnimeList & { number: number };
 
+interface click {
+	onClick: () => void;
+	isOpen: boolean;
+}
+
 export const AnimeCard: React.FC<Props> = (props) => {
 	const [active, setActive] = useState(false);
 	const [hover, setHover] = useState(false);
+	const [modal, setModal] = useState(false);
 	const control = useAnimation();
 
 	const variants: Variants = {
@@ -21,64 +27,120 @@ export const AnimeCard: React.FC<Props> = (props) => {
 		},
 	};
 
+	const variants2: Variants = {
+		disabled: {
+			opacity: 0,
+			transition: {
+				duration: 0.05,
+				ease: [0.6, -0.05, 0.01, 0.99],
+			},
+		},
+		enabled: {
+			opacity: 1,
+			transition: {
+				duration: 0.05,
+				ease: [0.6, -0.05, 0.01, 0.99],
+			},
+		},
+	};
+
+	const variants2_5: Variants = {
+		disabled: {
+			opacity: 0,
+			scale: 0.8,
+			transition: {
+				duration: 0.3,
+				delay: 0.05,
+				ease: [0.6, -0.05, 0.01, 0.99],
+			},
+		},
+		enabled: {
+			opacity: 1,
+			scale: 1,
+			transition: {
+				duration: 0.3,
+				delay: 0.05,
+				ease: [0.6, -0.05, 0.01, 0.99],
+			},
+		},
+	};
+
 	useEffect(() => {
-		if (hover) void control.start("enabled");
+		if (modal) void control.start("enabled");
 		else void control.start("disabled");
-	}, [control, hover]);
+	}, [control, modal]);
 
 	return (
-		<motion.div
-			onHoverStart={active ? () => setHover(false) : () => setHover(true)} //{() => setHover(true)}
-			onHoverEnd={() => setHover(false)}
-			variants={variants}
-			initial="initial"
-			animate="animate"
-			className="anime-card"
-			onClick={active ? () => setHover(false) : () => setHover(!hover)}>
-			<div className={`anime-popup-wrapper ${active ? "active" : ""}`.trim()}>
-				<div className={`anime-popup ${active ? "active" : ""}`.trim()}>
-					<div className="anime-popup-inner">
-						<div className="popup-placement">
-							<div className="popup-header">
-								<a className="popup-title" onClick={() => window.open(props.url)}>
-									<i className="fa-solid fa-arrow-up-right-from-square"></i>
-									<p className="popup-text">{props.title}</p>
-								</a>
-								<a onClick={() => setActive(!active)}>
-									<i className="fas fa-times"></i>
-								</a>
-							</div>
-							<div className="popup-info">
-								<div className="popup-item">
-									<p className="popup-text">status:</p>
-									<p className="popup-prop">{props.status}</p>
+		<div className="anime-card-wrapper">
+			<AnimatePresence exitBeforeEnter>
+				{active && (
+					<motion.div
+						animate={control}
+						variants={variants2}
+						initial="disabled"
+						className={`anime-popup-wrapper ${active ? "active" : ""}`.trim()}>
+						<div className={`anime-popup ${active ? "active" : ""}`.trim()}>
+							<motion.div
+								animate={control}
+								variants={variants2_5}
+								initial="disabled"
+								className="anime-popup-inner">
+								<div className="popup-placement">
+									<div className="popup-header">
+										<a className="popup-title" onClick={() => window.open(props.url)}>
+											<i className="fa-solid fa-arrow-up-right-from-square"></i>
+											<p className="popup-text">{props.title}</p>
+										</a>
+										<a onClick={() => [setModal(!modal), setTimeout(() => setActive(!modal), 200)]}>
+											<i className="fas fa-times"></i>
+										</a>
+									</div>
+									<div className="popup-info">
+										<div className="popup-item">
+											<p className="popup-text">status:</p>
+											<p className="popup-prop">{props.status}</p>
+										</div>
+										<div className="popup-item">
+											<p className="popup-text">eps:</p>
+											<p className="popup-prop">
+												{props.eps_watchted} / {props.eps_num}
+											</p>
+										</div>
+										<div className="popup-item">
+											<p className="popup-text">rating:</p>
+											<p className="popup-prop">0 / {props.rating}</p>
+										</div>
+										<div className="popup-item">
+											<p className="popup-text">type:</p>
+											<p className="popup-prop">{props.animeType}</p>
+										</div>
+									</div>
 								</div>
-								<div className="popup-item">
-									<p className="popup-text">eps:</p>
-									<p className="popup-prop">
-										{props.eps_watchted} / {props.eps_num}
-									</p>
-								</div>
-								<div className="popup-item">
-									<p className="popup-text">rating:</p>
-									<p className="popup-prop">0 / {props.rating}</p>
-								</div>
-								<div className="popup-item">
-									<p className="popup-text">type:</p>
-									<p className="popup-prop">{props.animeType}</p>
-								</div>
-							</div>
+							</motion.div>
 						</div>
-					</div>
+					</motion.div>
+				)}
+			</AnimatePresence>
+			<motion.div
+				onHoverStart={active ? () => setHover(false) : () => setHover(true)} //{() => setHover(true)}
+				onHoverEnd={() => setHover(false)}
+				variants={variants}
+				initial="initial"
+				animate="animate"
+				className="anime-card"
+				onClick={
+					active
+						? () => [setHover(false), setModal(false)]
+						: () => [setHover(!hover), setModal(!modal)]
+				}>
+				<img src={props.img} alt="" className="anime-img" />
+				<div
+					onClick={() => setActive(!active)}
+					className={`anime-info ${hover ? "active" : ""}`.trim()}>
+					<p className="anime-title">{props.title}</p>
 				</div>
-			</div>
-			<img src={props.img} alt="" className="anime-img" />
-			<div
-				onClick={() => setActive(!active)}
-				className={`anime-info ${hover ? "active" : ""}`.trim()}>
-				<p className="anime-title">{props.title}</p>
-			</div>
-		</motion.div>
+			</motion.div>
+		</div>
 	);
 };
 

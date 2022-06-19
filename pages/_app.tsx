@@ -1,6 +1,7 @@
 import "../styles/index.scss";
 import type { AppProps } from "next/app";
 import Navbar from "../components/navbar";
+import Footer from "../components/footer";
 import { AnimatePresence, motion } from "framer-motion";
 
 function MyApp({ Component, pageProps, router }: AppProps) {
@@ -20,6 +21,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
 					}}
 					exit={{ opacity: 0 }}>
 					<Component {...pageProps} />
+					<Footer />
 				</motion.div>
 			</AnimatePresence>
 		</>

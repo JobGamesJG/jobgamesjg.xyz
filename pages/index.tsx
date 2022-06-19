@@ -8,20 +8,29 @@ const Home: NextPage = () => {
 	const age = calculateAge();
 
 	const variants: Variants = {
-		initial: { opacity: 0, x: -25 },
+		initial: { opacity: 0, y: 25 },
 		animate: {
 			opacity: 1,
-			x: 0,
-			transition: { duration: 1, delay: 0, ease: [0.6, -0.05, 0.01, 0.99] },
+			y: 0,
+			transition: { duration: 1, delay: 1, ease: [0.6, -0.05, 0.01, 0.99] },
 		},
 	};
 
 	const variants2: Variants = {
-		initial: { opacity: 0, x: 25 },
+		initial: { opacity: 0, x: -25 },
 		animate: {
 			opacity: 1,
 			x: 0,
 			transition: { duration: 1, delay: 0.5, ease: [0.6, -0.05, 0.01, 0.99] },
+		},
+	};
+
+	const variants2_5: Variants = {
+		initial: { opacity: 0, y: -25 },
+		animate: {
+			opacity: 1,
+			y: 0,
+			transition: { duration: 1, delay: 1, ease: [0.6, -0.05, 0.01, 0.99] },
 		},
 	};
 
@@ -30,7 +39,7 @@ const Home: NextPage = () => {
 		animate: {
 			opacity: 1,
 			x: 0,
-			transition: { duration: 1, delay: 1, ease: [0.6, -0.05, 0.01, 0.99] },
+			transition: { duration: 1, delay: 0, ease: [0.6, -0.05, 0.01, 0.99] },
 		},
 	};
 
@@ -50,15 +59,28 @@ const Home: NextPage = () => {
 			</Head>
 			<div className="home-wrapper">
 				<div className="home">
-					<div className="home-title">
-						<h1>Hi, I am</h1> <h1>Job</h1>
+					<div className="home-text">
+						<motion.div variants={variants3} initial="initial" animate="animate">
+							<div className="home-title">
+								<h1>Hi, I am</h1> <h1>Job</h1>
+							</div>
+						</motion.div>
+						<div className="home-info">
+							<motion.p variants={variants2} initial="initial" animate="animate">
+								{age} year-old anime enjoyer and programmer
+							</motion.p>
+							<motion.p variants={variants2_5} initial="initial" animate="animate">
+								🐒👍🏾
+							</motion.p>
+						</div>
 					</div>
-					<p className="home-info">{age} year-old anime enjoyer and programmer</p>
-					<div className="home-action">
-						<a href="./about">
-							View About Me <i className="fas fa-arrow-circle-right"></i>
-						</a>
-					</div>
+					<motion.div variants={variants} initial="initial" animate="animate">
+						<div className="home-action">
+							<a href="./about">
+								View About Me <i className="fas fa-arrow-circle-right"></i>
+							</a>
+						</div>
+					</motion.div>
 				</div>
 			</div>
 		</>

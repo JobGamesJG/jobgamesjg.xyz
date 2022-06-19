@@ -1,0 +1,52 @@
+.footer-wrapper {
+	height: fit-content;
+	width: 80vw;
+	display: grid;
+	margin-left: auto;
+	margin-right: auto;
+	margin: 0px auto 20px auto;
+}
+
+.footer {
+	padding: 10px 20px 0px 20px;
+}
+
+.footer-info {
+	display: flex;
+	justify-content: space-between;
+
+	margin-bottom: 20px;
+
+	p {
+		font-size: 20px;
+		font-weight: 500;
+	}
+
+	a {
+		transition: all 0.2s ease;
+		color: rgba($white, 1);
+
+		i {
+			transition: all 0.2s ease;
+			color: rgba($white, 1);
+		}
+
+		&:hover {
+			i {
+				transition: all 0.2s ease;
+				color: rgba($accent, 0.8);
+			}
+
+			transition: all 0.2s ease;
+			color: rgba($accent, 0.8);
+		}
+	}
+}
+
+.footer-made {
+	width: max-content;
+	height: auto;
+	display: block;
+	justify-content: center;
+	text-align: center;
+}

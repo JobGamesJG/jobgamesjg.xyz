@@ -1,6 +1,7 @@
 .about {
 	margin-top: 5rem;
-	max-width: 80vw;
+	width: 80vw;
+	height: auto;
 
 	margin-left: auto;
 	margin-right: auto;
@@ -50,16 +51,9 @@
 
 .about-socials {
 	cursor: pointer;
-	display: grid;
-	grid-template-columns: repeat(auto-fill, 120px);
+	display: block;
 	width: 100%;
 	margin-left: 50px;
-
-	div {
-		display: flex;
-		flex-direction: column;
-		width: max-content;
-	}
 
 	div:last-child {
 		margin-left: 30px;
@@ -76,6 +70,8 @@
 		margin: 3px;
 		font-weight: 600;
 
+		display: inline-block;
+
 		&:hover {
 			background-color: $accent;
 
@@ -90,13 +86,6 @@
 		margin-right: 10px;
 		color: rgba($accent, 0.6);
 	}
-}
-
-.about-breakline {
-	margin-top: 1rem;
-	width: 100%;
-	height: 2px;
-	background-color: rgba($white, 0.25);
 }
 
 @media screen and (max-width: 960px) {
@@ -115,6 +104,12 @@
 	.about-info {
 		margin: 0px;
 	}
+
+	.about-socials {
+		margin-left: 0px;
+
+		text-align: center;
+	}
 }
 
 @media screen and (max-width: 400px) {
@@ -128,5 +123,11 @@
 
 	.about-text-items {
 		transform: none;
+	}
+}
+
+@media screen and (max-width: 350px) {
+	.about-img {
+		display: none;
 	}
 }
