@@ -98,7 +98,9 @@ export const AnimeCard: React.FC<Props> = (props) => {
 									<div className="popup-info">
 										<div className="popup-item">
 											<p className="popup-text">status:</p>
-											<p className="popup-prop">{props.status}</p>
+											<p className="popup-prop">
+												{props.status} <i className={props.icon}></i>
+											</p>
 										</div>
 										<div className="popup-item">
 											<p className="popup-text">eps:</p>
@@ -108,11 +110,15 @@ export const AnimeCard: React.FC<Props> = (props) => {
 										</div>
 										<div className="popup-item">
 											<p className="popup-text">rating:</p>
-											<p className="popup-prop">{props.rating} / 10</p>
+											<p className="popup-prop">
+												{props.rating} / 10 <i className="fa-solid fa-star"></i>
+											</p>
 										</div>
 										<div className="popup-item">
 											<p className="popup-text">type:</p>
-											<p className="popup-prop">{props.animeType}</p>
+											<p className="popup-prop">
+												{props.animeType} <i className={props.statusIcon}></i>
+											</p>
 										</div>
 									</div>
 								</div>
