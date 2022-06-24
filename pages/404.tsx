@@ -31,9 +31,9 @@ const Home: NextPage = () => {
 							y: 0,
 							transition: { duration: 1, delay: 1, ease: [0.6, -0.05, 0.01, 0.99] },
 						}}
-						className="error404-button">
+						className="error404-action">
 						<a href="/">
-							<i className="fas fa-home"></i> Home
+							Home <i className="fas fa-home"></i>
 						</a>
 					</motion.div>
 				</motion.div>

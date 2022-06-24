@@ -108,7 +108,7 @@ export const AnimeCard: React.FC<Props> = (props) => {
 										</div>
 										<div className="popup-item">
 											<p className="popup-text">rating:</p>
-											<p className="popup-prop">0 / {props.rating}</p>
+											<p className="popup-prop">{props.rating} / 10</p>
 										</div>
 										<div className="popup-item">
 											<p className="popup-text">type:</p>

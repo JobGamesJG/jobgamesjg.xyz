@@ -45,22 +45,12 @@ export interface AnimeList {
 
 export interface DiscordUserRaw {
 	id: string;
-	username: string;
-	discriminator: number;
-	avatar: string;
-	verified: string;
-	email: string;
-	flags: number;
-	banner: string;
-	accent_color: number;
-	premium_type: number;
-	public_flags: number;
+	name: string;
+	properties: [{ name: string; value: string }];
 }
 
 export interface DiscordUser {
 	id: string;
-	username: string;
-	discriminator: number;
-	avatar: string;
-	verified: string;
+	name: string;
+	base64Value: string;
 }
