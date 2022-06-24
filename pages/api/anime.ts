@@ -17,7 +17,7 @@ const Anime = async (_: NextApiRequest, res: NextApiResponse) => {
 	const getIcon = (status: number): string => {
 		const choice = [
 			"fas fa-eye",
-			"fas fa-check-circle",
+			"fas fa-check",
 			"fas fa-pause-circle",
 			"fas fa-trash-alt",
 			"",

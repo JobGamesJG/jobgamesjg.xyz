@@ -105,7 +105,7 @@ export const AnimeCard: React.FC<Props> = (props) => {
 										<div className="popup-item">
 											<p className="popup-text">eps:</p>
 											<p className="popup-prop">
-												{props.eps_watchted} / {props.eps_num}
+												{props.eps_watchted} / {props.eps_num} eps
 											</p>
 										</div>
 										<div className="popup-item">
