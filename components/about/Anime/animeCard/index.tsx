@@ -1,14 +1,8 @@
 import { motion, AnimatePresence, useAnimation, Variants } from "framer-motion";
 import type { AnimeList } from "../../../../lib";
 import React, { useEffect, useState } from "react";
-import { PulseLoader } from "react-spinners";
 
 type Props = AnimeList & { number: number };
-
-interface click {
-	onClick: () => void;
-	isOpen: boolean;
-}
 
 export const AnimeCard: React.FC<Props> = (props) => {
 	const [active, setActive] = useState(false);
@@ -99,25 +93,26 @@ export const AnimeCard: React.FC<Props> = (props) => {
 										<div className="popup-item">
 											<p className="popup-text">status:</p>
 											<p className="popup-prop">
-												{props.status} <i className={props.icon}></i>
+												<i className={props.icon}></i> {props.status}
 											</p>
 										</div>
 										<div className="popup-item">
 											<p className="popup-text">eps:</p>
 											<p className="popup-prop">
-												{props.eps_watchted} / {props.eps_num} eps
+												<i className="fa-solid fa-ticket"></i> {props.eps_watchted} /{" "}
+												{props.eps_num}
 											</p>
 										</div>
 										<div className="popup-item">
 											<p className="popup-text">rating:</p>
 											<p className="popup-prop">
-												{props.rating} / 10 <i className="fa-solid fa-star"></i>
+												<i className="fa-solid fa-star"></i> {props.rating} / 10
 											</p>
 										</div>
 										<div className="popup-item">
 											<p className="popup-text">type:</p>
 											<p className="popup-prop">
-												{props.animeType} <i className={props.statusIcon}></i>
+												<i className={props.statusIcon}></i> {props.animeType}
 											</p>
 										</div>
 									</div>
@@ -134,12 +129,14 @@ export const AnimeCard: React.FC<Props> = (props) => {
 				initial="initial"
 				animate="animate"
 				className="anime-card"
+				style={{ backgroundColor: props.color }}
 				onClick={
 					active
 						? () => [setHover(false), setModal(false)]
 						: () => [setHover(!hover), setModal(!modal)]
 				}>
 				<img src={props.img} alt="" className="anime-img" />
+				<div className="anime-overlap"></div>
 				<div
 					onClick={() => setActive(!active)}
 					className={`anime-info ${hover ? "active" : ""}`.trim()}>
@@ -149,30 +146,3 @@ export const AnimeCard: React.FC<Props> = (props) => {
 		</div>
 	);
 };
-
-// {/* <div className={`anime__eps-value ${hover ? "active" : ""}`.trim()}>
-// 						<a className="anime-title-link">
-// 							<p className="anime-title main" onClick={() => window.open(props.url)}>
-// 								{props.title}
-// 							</p>
-// 						</a>
-
-// 						<div className="anime-status">
-// 							<div className="placement-1">
-// 								<p className="anime-eps-total">
-// 									Eps {props.eps_watchted} / {props.eps_num}
-// 								</p>
-// 								<p className="anime-watching">
-// 									<i className={props.icon} style={{ color: props.colour }} /> {props.status}
-// 								</p>
-// 							</div>
-// 							<div className="placement-2">
-// 								<p className="anime-type">
-// 									{props.animeType} <i className={props.animeTypeIcon}></i>
-// 								</p>
-// 								<p className="anime-rating">
-// 									{props.rating} <i className="fas fa-star"></i>
-// 								</p>
-// 							</div>
-// 						</div>
-// 					</div> */}

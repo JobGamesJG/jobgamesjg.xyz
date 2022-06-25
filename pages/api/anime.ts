@@ -9,7 +9,7 @@ const Anime = async (_: NextApiRequest, res: NextApiResponse) => {
 		return choice;
 	};
 
-	const getColour = (status: number): string => {
+	const getColor = (status: number): string => {
 		const choice = ["#6F9BE1", "#90E855", "#FB9D48", "#D83C4A", "", "#FCFA56"][status - 1];
 		return choice;
 	};
@@ -74,7 +74,7 @@ const Anime = async (_: NextApiRequest, res: NextApiResponse) => {
 		animeType: anime.anime_media_type_string,
 		statusIcon: getWatch(anime.anime_media_type_string),
 		status: getStatus(anime.status),
-		colour: getColour(anime.status),
+		color: getColor(anime.status),
 		icon: getIcon(anime.status),
 		url: `https://myanimelist.net${anime.anime_url}`,
 	}));

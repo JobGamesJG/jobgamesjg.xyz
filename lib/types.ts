@@ -40,7 +40,7 @@ export interface AnimeList {
 	animeTypeIcon: string;
 	animeType: string;
 	statusIcon: string;
-	colour: string;
+	color: string;
 	url: string;
 }
 
