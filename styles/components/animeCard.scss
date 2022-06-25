@@ -35,6 +35,7 @@
 }
 
 .anime-card {
+	cursor: pointer;
 	width: 220px;
 	height: 320px;
 	padding: 7px;
@@ -43,11 +44,30 @@
 	position: relative;
 
 	border-radius: 10px;
-	cursor: pointer;
 
 	display: flex;
 	align-items: center;
 	justify-content: center;
+
+	&.watching {
+		background-image: linear-gradient(to right top, #66a1ff, #3b82f6, #0045b4);
+	}
+
+	&.completed {
+		background-image: linear-gradient(to right top, #b5ff83, #90e855, #70ff11);
+	}
+
+	&.onhold {
+		background-image: linear-gradient(to right top, #ffb87a, #fb9d48, #ff861c);
+	}
+
+	&.dropped {
+		background-image: linear-gradient(to right top, #ff6774, #d83c4a, #ff293a);
+	}
+
+	&.plantowatch {
+		background-image: linear-gradient(to right top, #fdfcb1, #fcfa56, #fffb00);
+	}
 }
 
 .anime-img {

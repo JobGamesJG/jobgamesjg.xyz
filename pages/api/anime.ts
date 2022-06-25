@@ -10,7 +10,7 @@ const Anime = async (_: NextApiRequest, res: NextApiResponse) => {
 	};
 
 	const getColor = (status: number): string => {
-		const choice = ["#6F9BE1", "#90E855", "#FB9D48", "#D83C4A", "", "#FCFA56"][status - 1];
+		const choice = ["#4071f4", "#90E855", "#FB9D48", "#D83C4A", "", "#FCFA56"][status - 1];
 		return choice;
 	};
 
