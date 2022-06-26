@@ -69,7 +69,10 @@ const Home: NextPage = () => {
 						</motion.div>
 						<div className="home-info">
 							<motion.p variants={variants2} initial="initial" animate="animate">
-								{age} year-old anime enjoyer and programmer🐒👍🏾
+								{age} year-old anime enjoyer and programmer
+								<motion.a variants={variants2_5} initial="initial" animate="animate">
+									🐒👍🏾
+								</motion.a>
 							</motion.p>
 						</div>
 					</div>

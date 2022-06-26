@@ -128,7 +128,9 @@ export const AnimeCard: React.FC<Props> = (props) => {
 				variants={variants}
 				initial="initial"
 				animate="animate"
-				className={`anime-card ${props.status.replace(" ", "").replace(" ", "")}`.trim()}
+				className={`anime-card ${props.status.replace(" ", "").replace(" ", "")}${
+					hover ? " active" : ""
+				}`.trim()}
 				onClick={
 					active
 						? () => [setHover(false), setModal(false)]
