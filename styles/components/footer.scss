@@ -19,7 +19,7 @@
 
 	p {
 		font-size: 20px;
-		font-weight: 500;
+		font-weight: 650;
 	}
 
 	a {
@@ -49,4 +49,13 @@
 	display: block;
 	justify-content: center;
 	text-align: center;
+
+	a {
+		transition: all 0.2s ease;
+		font-weight: 600;
+
+		&:hover {
+			color: rgba($accent, 0.8);
+		}
+	}
 }
