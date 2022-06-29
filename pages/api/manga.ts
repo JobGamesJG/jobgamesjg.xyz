@@ -1,8 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import type { AnimeList, AnimeListRaw } from "../../lib/types";
+import type { MangaList, MangaListRaw } from "../../lib/types";
 import axios from "axios";
 
-const Anime = async (_: NextApiRequest, res: NextApiResponse) => {
+const Manga = async (_: NextApiRequest, res: NextApiResponse) => {
 	const getStatus = (status: number): string => {
 		const choice = ["watching", "completed", "on hold", "dropped", "", "plan to watch"][status - 1];
 		return choice;
@@ -55,20 +55,6 @@ const Anime = async (_: NextApiRequest, res: NextApiResponse) => {
 		return choice;
 	};
 
-	const getGenre = (status: any): any => {
-		let choice = "";
-
-		for (let i = 0; i < 30; i++) {
-			if (status[i]) {
-				let str = choice + ", " + status[i].name;
-				let char = str[0];
-				choice = str.replace(char, " ");
-			}
-		}
-
-		return choice;
-	};
-
 	const IfZero = (choice: string): string => {
 		if (choice == "0") {
 			choice = "?";
@@ -78,28 +64,30 @@ const Anime = async (_: NextApiRequest, res: NextApiResponse) => {
 	};
 
 	const response = await axios
-		.get<AnimeListRaw[]>("https://myanimelist.net/animelist/JobGamesJG/load.json?status=7&offset=0")
+		.get<MangaListRaw[]>("https://myanimelist.net/mangalist/JobGamesJG/load.json?status=7&offset=0")
 		.catch(() => null);
 
-	if (!response) return res.status(200).json({ animes: [] });
+	if (!response) return res.status(200).json({ mangas: [] });
 
 	const { data } = response;
-	const animes = data.map<AnimeList>((anime) => ({
-		img: anime.anime_image_path.replace("r/96x136/", ""),
-		eps_watchted: IfZero(anime.num_watched_episodes),
-		eps_num: IfZero(anime.anime_num_episodes),
-		rating: IfZero(anime.score),
-		title: anime.anime_title,
-		animeTypeIcon: getStatusIcon(anime.anime_media_type_string),
-		animeType: anime.anime_media_type_string,
-		status: getStatus(anime.status),
-		genres: getGenre(anime.genres),
-		color: getColor(anime.status),
-		icon: getIcon(anime.status),
-		url: `https://myanimelist.net${anime.anime_url}`,
+	const mangas = data.map<MangaList>((manga) => ({
+		img: manga.manga_image_path.replace("r/96x136/", ""),
+		num_read_chapters: IfZero(manga.num_read_chapters),
+		num_read_volumes: IfZero(manga.num_read_volumes),
+		num_chapters: IfZero(manga.manga_num_chapters),
+		num_volumes: IfZero(manga.manga_num_volumes),
+		mangaType: manga.manga_media_type_string,
+		rating: IfZero(manga.score),
+		title: manga.manga_title,
+		statusIcon: getStatusIcon(manga.manga_media_type_string),
+		status: getStatus(manga.status),
+		genres: getGenre(manga.genres),
+		color: getColor(manga.status),
+		icon: getIcon(manga.status),
+		url: `https://myanimelist.net${manga.manga_url}`,
 	}));
 
-	return res.status(200).json({ animes });
+	return res.status(200).json({ mangas });
 };
 
-export default Anime;
+export default Manga;

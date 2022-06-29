@@ -40,6 +40,42 @@ export interface AnimeList {
 	title: string;
 	animeTypeIcon: string;
 	animeType: string;
+	genres: string;
+	color: string;
+	url: string;
+}
+
+export interface MangaListRaw {
+	status: number;
+	score: string;
+	tags: string;
+	is_rereading: number;
+	num_read_chapters: string;
+	num_read_volumes: string;
+	manga_title: string;
+	manga_english: string;
+	manga_num_chapters: string;
+	manga_num_volumes: string;
+	manga_media_type_string: string;
+	manga_publishing_status: number;
+	manga_id: number;
+	manga_magazines: null;
+	genres: [{ id: number; name: string }];
+	manga_url: string;
+	manga_image_path: string;
+}
+
+export interface MangaList {
+	img: string;
+	num_read_chapters: string;
+	num_read_volumes: string;
+	num_chapters: string;
+	num_volumes: string;
+	mangaType: string;
+	status: string;
+	icon: string;
+	rating: string;
+	title: string;
 	statusIcon: string;
 	genres: string;
 	color: string;
