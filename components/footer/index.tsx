@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
 					<a className="footer-made">
 						<i className="fa-solid fa-code"></i> made by{" "}
 						<a href="https://jobgamesjg.xyz/">JobGamesJG</a> & helped by{" "}
-						<a href="https://daangamesdg.xyz/">Ijskoud</a>
+						<a href="https://ijskoud.dev/">Ijskoud</a>
 					</a>
 				</div>
 			</div>
