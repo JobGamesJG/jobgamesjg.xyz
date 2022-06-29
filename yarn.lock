@@ -1457,9 +1457,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"framer-motion@npm:^6.3.15":
-  version: 6.3.15
-  resolution: "framer-motion@npm:6.3.15"
+"framer-motion@npm:^6.3.16":
+  version: 6.3.16
+  resolution: "framer-motion@npm:6.3.16"
   dependencies:
     "@emotion/is-prop-valid": ^0.8.2
     framesync: 6.0.1
@@ -1473,7 +1473,7 @@ __metadata:
   dependenciesMeta:
     "@emotion/is-prop-valid":
       optional: true
-  checksum: d761745e25c7c81c96e15c73b311afb1b732c31f8deb6dc9f71edff32f4b0495af28580707288ae3827a8c1b2a71e093b7b97746ddf73dc7aaecf5d2a29ce71c
+  checksum: f60df0181f4b646700b709c551f505b985399e41cc60ea511ad0d0fe05399ceb36478da360d38481757dd5ef15964f10b6ffbea15cbd58d9698da02c962076f1
   languageName: node
   linkType: hard
 
@@ -2050,7 +2050,7 @@ __metadata:
     eslint-config-next: 12.1.6
     eslint-config-prettier: ^8.5.0
     eslint-plugin-prettier: ^4.0.0
-    framer-motion: ^6.3.15
+    framer-motion: ^6.3.16
     hoist-non-react-statics: ^3.3.2
     next: 12.1.6
     react: 18.2.0
@@ -2318,11 +2318,11 @@ __metadata:
   linkType: hard
 
 "minipass@npm:^3.0.0, minipass@npm:^3.1.1, minipass@npm:^3.1.6":
-  version: 3.3.3
-  resolution: "minipass@npm:3.3.3"
+  version: 3.3.4
+  resolution: "minipass@npm:3.3.4"
   dependencies:
     yallist: ^4.0.0
-  checksum: 523a338f42140c2e62bff3429f236cc44a32ddd29a70d5221e0570ace237057190981cad406fd3a420f03a95cc001ad58a388d902b9519038e27f190bb88a6e7
+  checksum: 5d95a7738c54852ba78d484141e850c792e062666a2d0c681a5ac1021275beb7e1acb077e59f9523ff1defb80901aea4e30fac10ded9a20a25d819a42916ef1b
   languageName: node
   linkType: hard
 
