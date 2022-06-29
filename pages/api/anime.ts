@@ -55,20 +55,6 @@ const Anime = async (_: NextApiRequest, res: NextApiResponse) => {
 		return choice;
 	};
 
-	const getGenre = (status: any): any => {
-		let choice = "";
-
-		for (let i = 0; i < 30; i++) {
-			if (status[i]) {
-				let str = choice + ", " + status[i].name;
-				let char = str[0];
-				choice = str.replace(char, " ");
-			}
-		}
-
-		return choice;
-	};
-
 	const IfZero = (choice: string): string => {
 		if (choice == "0") {
 			choice = "?";
