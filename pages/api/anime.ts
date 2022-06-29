@@ -2,6 +2,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import type { AnimeList, AnimeListRaw } from "../../lib/types";
 import axios from "axios";
 import { title } from "process";
+import { table } from "console";
 
 const Anime = async (_: NextApiRequest, res: NextApiResponse) => {
 	const getStatus = (status: number): string => {
@@ -49,6 +50,20 @@ const Anime = async (_: NextApiRequest, res: NextApiResponse) => {
 		return choice;
 	};
 
+	const getGenre = (status: any): any => {
+		let choice = "";
+
+		for (let i = 0; i < 30; i++) {
+			if (status[i]) {
+				let str = choice + ", " + status[i].name;
+				let char = str[0];
+				choice = str.replace(char, " ");
+			}
+		}
+
+		return choice;
+	};
+
 	const IfZero = (choice: string): string => {
 		if (choice == "0") {
 			choice = "?";
@@ -66,7 +81,7 @@ const Anime = async (_: NextApiRequest, res: NextApiResponse) => {
 	const { data } = response;
 	const animes = data.map<AnimeList>((anime) => ({
 		img: anime.anime_image_path.replace("r/96x136/", ""),
-		eps_watchted: anime.num_watched_episodes,
+		eps_watchted: IfZero(anime.num_watched_episodes),
 		eps_num: IfZero(anime.anime_num_episodes),
 		rating: IfZero(anime.score),
 		title: anime.anime_title,
@@ -74,6 +89,7 @@ const Anime = async (_: NextApiRequest, res: NextApiResponse) => {
 		animeType: anime.anime_media_type_string,
 		statusIcon: getWatch(anime.anime_media_type_string),
 		status: getStatus(anime.status),
+		genres: getGenre(anime.genres),
 		color: getColor(anime.status),
 		icon: getIcon(anime.status),
 		url: `https://myanimelist.net${anime.anime_url}`,

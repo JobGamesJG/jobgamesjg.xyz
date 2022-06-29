@@ -3,7 +3,7 @@ export interface AnimeListRaw {
 	score: string;
 	tags: string;
 	is_rewatching: number;
-	num_watched_episodes: number;
+	num_watched_episodes: string;
 	anime_title: string;
 	anime_num_episodes: string;
 	anime_airing_status: number;
@@ -15,6 +15,7 @@ export interface AnimeListRaw {
 	has_promotion_video: boolean;
 	has_video: boolean;
 	video_url: string;
+	genres: [{ id: number; name: string }];
 	anime_url: string;
 	anime_image_path: string;
 	is_added_to_list: boolean;
@@ -31,7 +32,7 @@ export interface AnimeListRaw {
 
 export interface AnimeList {
 	img: string;
-	eps_watchted: number;
+	eps_watchted: string;
 	eps_num: string;
 	status: string;
 	icon: string;
@@ -40,6 +41,7 @@ export interface AnimeList {
 	animeTypeIcon: string;
 	animeType: string;
 	statusIcon: string;
+	genres: string;
 	color: string;
 	url: string;
 }
