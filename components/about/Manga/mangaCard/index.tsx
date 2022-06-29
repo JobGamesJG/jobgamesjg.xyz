@@ -1,10 +1,10 @@
 import { motion, AnimatePresence, useAnimation, Variants } from "framer-motion";
-import type { AnimeList } from "../../../../lib";
+import type { MangaList } from "../../../../lib";
 import React, { useEffect, useState } from "react";
 
-type Props = AnimeList & { number: number };
+type Props = MangaList & { number: number };
 
-export const AnimeCard: React.FC<Props> = (props) => {
+export const MangaCard: React.FC<Props> = (props) => {
 	const [active, setActive] = useState(false);
 	const [hover, setHover] = useState(false);
 	const [modal, setModal] = useState(false);
@@ -97,10 +97,17 @@ export const AnimeCard: React.FC<Props> = (props) => {
 											</p>
 										</div>
 										<div className="popup-item">
-											<p className="popup-text">eps:</p>
+											<p className="popup-text">volumes:</p>
 											<p className="popup-prop">
-												<i className="fa-solid fa-ticket"></i> {props.eps_watchted} /{" "}
-												{props.eps_num}
+												<i className="fa-solid fa-ticket"></i> {props.num_read_volumes} /{" "}
+												{props.num_volumes}
+											</p>
+										</div>
+										<div className="popup-item">
+											<p className="popup-text">chapters:</p>
+											<p className="popup-prop">
+												<i className="fa-solid fa-ticket"></i> {props.num_read_chapters} /{" "}
+												{props.num_chapters}
 											</p>
 										</div>
 										<div className="popup-item">
@@ -111,9 +118,7 @@ export const AnimeCard: React.FC<Props> = (props) => {
 										</div>
 										<div className="popup-item">
 											<p className="popup-text">type:</p>
-											<p className="popup-prop">
-												<i className={props.animeTypeIcon}></i> {props.animeType}
-											</p>
+											<p className="popup-prop">{props.mangaType}</p>
 										</div>
 										<div className="popup-item">
 											<p className="popup-text">tags:</p>

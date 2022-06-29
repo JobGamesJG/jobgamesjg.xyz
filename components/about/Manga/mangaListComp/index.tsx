@@ -1,16 +1,15 @@
-import type { AnimeList } from "../../../../lib";
+import type { MangaList } from "../../../../lib";
 import React, { useState } from "react";
-import { AnimeCard } from "../animeCard";
+import { MangaCard } from "../mangaCard";
 import { AnimatePresence, motion } from "framer-motion";
 import { PulseLoader } from "react-spinners";
 
-export const AnimeListComp: React.FC<{ animes: AnimeList[] | null }> = ({ animes }) => {
+export const MangaListComp: React.FC<{ mangas: MangaList[] | null }> = ({ mangas }) => {
 	const [count, setCount] = useState(10000);
-	const onClick = () => setCount(count + 14);
 
 	return (
 		<AnimatePresence exitBeforeEnter>
-			{animes ? (
+			{mangas ? (
 				<>
 					<motion.div
 						key="2"
@@ -24,11 +23,11 @@ export const AnimeListComp: React.FC<{ animes: AnimeList[] | null }> = ({ animes
 							},
 						}}
 						exit={{ opacity: 0 }}>
-						{animes
+						{mangas
 							.slice(0, count)
 							.filter((x) => x)
 							.map((anime, i) => (
-								<AnimeCard key={i} {...anime} number={i + 1} />
+								<MangaCard key={i} {...anime} number={i + 1} />
 							))}
 					</motion.div>
 				</>

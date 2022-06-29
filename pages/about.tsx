@@ -1,6 +1,6 @@
-import { AboutText, Socials, AnimeListComp } from "../components/about";
+import { AboutText, Socials, AnimeListComp, MangaListComp } from "../components/about";
 import BreakLine from "../components/breakline";
-import { AnimeList, calculateAge } from "../lib";
+import { AnimeList, MangaList, calculateAge } from "../lib";
 import type { NextPage } from "next";
 import Head from "next/head";
 import React, { useEffect, useState } from "react";
@@ -8,6 +8,7 @@ import axios, { AxiosError } from "axios";
 
 const About: NextPage = () => {
 	const [animes, setAnimes] = useState<AnimeList[] | null>(null);
+	const [mangas, setMangas] = useState<MangaList[] | null>(null);
 	const age = calculateAge();
 
 	useEffect(() => {
@@ -16,6 +17,16 @@ const About: NextPage = () => {
 			.get<{ animes: AnimeList[] }>("/api/anime", { cancelToken: token })
 			.then((res) => setAnimes(res.data.animes))
 			.catch((err: AxiosError) => console.error(`[Animes]: ${err.message}`));
+
+		return () => cancel("Request cancelled");
+	}, []);
+
+	useEffect(() => {
+		const { cancel, token } = axios.CancelToken.source();
+		axios
+			.get<{ mangas: MangaList[] }>("/api/manga", { cancelToken: token })
+			.then((res) => setMangas(res.data.mangas))
+			.catch((err: AxiosError) => console.error(`[mangas]: ${err.message}`));
 
 		return () => cancel("Request cancelled");
 	}, []);
@@ -52,14 +63,20 @@ const About: NextPage = () => {
 					</div>
 				</div>
 				<BreakLine />
-				<div className="anime">
-					<h1 className="anime-main-title">Animes</h1>
-					<p className="anime-self-info">
+				<div className="animeManga">
+					<h1 className="card-main-title">Animes</h1>
+					<p className="card-self-info">
 						I watch a lot of anime and I realy mean A LOT😅. Once I finshed over 50 episodes in one
 						sitting🥱, thats like 16 hours. Now I watch less because of school😢. Every episode I
 						have watched is shown on MyAnimeList and displayed here on my website.
 					</p>
 					<AnimeListComp animes={animes} />
+					<h1 className="card-main-title">Manga&apos;s</h1>
+					<p className="card-self-info">
+						I dont read a lot of manga. Now I read less because of school😢. Every volume / chapter
+						I have read is shown on MyAnimeList and displayed here on my website.
+					</p>
+					<MangaListComp mangas={mangas} />
 				</div>
 			</div>
 		</>
