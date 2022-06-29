@@ -83,7 +83,7 @@ export const AnimeCard: React.FC<Props> = (props) => {
 									<div className="popup-header">
 										<a className="popup-title" onClick={() => window.open(props.url)}>
 											<i className="fa-solid fa-arrow-up-right-from-square"></i>
-											<p className="popup-text">{props.title}</p>
+											<p className="popup-title">{props.title}</p>
 										</a>
 										<a onClick={() => [setModal(!modal), setTimeout(() => setActive(!modal), 200)]}>
 											<i className="fas fa-times"></i>
@@ -115,6 +115,18 @@ export const AnimeCard: React.FC<Props> = (props) => {
 												<i className={props.statusIcon}></i> {props.animeType}
 											</p>
 										</div>
+										<div className="popup-item">
+											<p className="popup-text">tags:</p>
+											<p className="popup-prop">{props.genres}</p>
+										</div>
+										<AnimatePresence exitBeforeEnter>
+											{props.genres.includes("Ecchi") && (
+												<div className="popup-item">
+													<p className="popup-text">description:</p>
+													<p className="popup-prop">No i did not watch this😅</p>
+												</div>
+											)}
+										</AnimatePresence>
 									</div>
 								</div>
 							</motion.div>
